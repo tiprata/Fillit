@@ -1,0 +1,54 @@
+(global-set-key (kbd "<kp-0>") "0")
+(global-set-key (kbd "<kp-1>") "1")
+(global-set-key (kbd "<kp-2>") "2")
+(global-set-key (kbd "<kp-3>") "3")
+(global-set-key (kbd "<kp-4>") "4")
+(global-set-key (kbd "<kp-5>") "5")
+(global-set-key (kbd "<kp-6>") "6")
+(global-set-key (kbd "<kp-7>") "7")
+(global-set-key (kbd "<kp-8>") "8")
+(global-set-key (kbd "<kp-9>") "9")
+(global-set-key (kbd "<kp-enter>") 'newline)
+(global-set-key (kbd "<kp-add>") "+")
+(global-set-key (kbd "<kp-subtract>") "-")
+(global-set-key (kbd "<kp-multiply>") "*")
+(global-set-key (kbd "<kp-divide>") "/")
+(global-set-key (kbd "M-o x") "=")
+(global-set-key (kbd "M-O n") ".")
+
+(add-to-list 'load-path "~/.emacs.d/tuareg-mode")
+    (autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+    (autoload 'camldebug "camldebug" "Run the Caml debugger" t)
+    (autoload 'tuareg-imenu-set-imenu "tuareg-imenu"
+      "Configuration of imenu for tuareg" t)
+
+(add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+
+(setq auto-mode-alist
+        (append '(("\\.ml[ily]?$" . tuareg-mode)
+				            ("\\.topml$" . tuareg-mode))
+                  auto-mode-alist))
+
+(setq-default font-lock-global-modes t)
+(column-number-mode t)
+(line-number-mode t)
+(global-font-lock-mode t)
+(require 'paren)
+(show-paren-mode)
+(load "~/.emacs.d/.linum.el")
+(require 'linum)
+(global-linum-mode 1)
+(setq-default show-trailing-whitespace t)
+(custom-set-faces
+ '(my-tab-face ((((class color))
+				 (:foreground "green" :weight bold :underline t))) t))
+(add-hook 'font-lock-mode-hook
+		  (function
+		   (lambda ()
+			 (setq font-lock-keywords
+				   (append font-lock-keywords
+						   '(("\t+" (0 'my-tab-face t))))))))
+(require 'whitespace)
+(setq whitespace-line-column 80)
+(setq whitespace-style '(face lines-tail))
+(add-hook 'prog-mode-hook 'whitespace-mode)
