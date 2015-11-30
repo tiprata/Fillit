@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 11:32:24 by tiprata           #+#    #+#             */
-/*   Updated: 2015/11/29 13:42:49 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/11/30 10:47:58 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 #include <unistd.h>
 #include <string.h>
 
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
 int		ft_strlen(char *str)
 {
 	int i;
@@ -32,77 +36,78 @@ void	ft_putstr(char *str)
 
 char    *ft_strxdup(char const *s, size_t x, size_t y)
 {
-  size_t          i;
-  char            *str;
+	size_t          i;
+	char            *str;
 
-  i = 0;
-  if (!(str = (char *)malloc(sizeof(char) * y - x + 1)))
-    return (NULL);
-  while (x < y)
-    {
-      str[i] = s[x];
-      i++;
-      x++;
-    }
-  str[i] = '\0';
-  return (str);
+	i = 0;
+	if (!(str = (char *)malloc(sizeof(char) * y - x + 1)))
+		return (NULL);
+	while (x < y)
+	{
+		str[i] = s[x];
+		i++;
+		x++;
+	}
+	str[i] = '\0';
+	return (str);
 }
 
 size_t  ft_line_count(char const *s, char c)
 {
-  size_t i;
-  size_t result;
-  size_t k;
+	size_t i;
+	size_t result;
+	size_t k;
 
-  k = 0;
-  result = 0;
-  i = 0;
-  while (s[i])
-    {
-      if (s[i] == c)
+	k = 0;
+	result = 0;
+	i = 0;
+	while (s[i])
 	{
-	  while (s[i] == c)
-	    if (s[++i] == '\0' && k == 0)
-	      return (result);
-	  result++;
-	}
-      else
+		if (s[i] == c)
 	{
-	  k = 1;
-	  if (s[++i + 1] == '\0' && result == 0)
-	    return (1);
+		while (s[i] == c)
+			if (s[++i] == '\0' && k == 0)
+				return (result);
+		result++;
 	}
-    }
-  return (s[i - 1] == c && k == 1 && result != 1 ? result - 1 : result);
+		else
+		{
+			k = 1;
+			if (s[++i + 1] == '\0' && result == 0)
+				return (1);
+		}
+	}
+	return (result + 1);
+//	return (s[i - 1] == c && k == 1 && result != 1 ? result - 1 : result);
 }
 
 char    **ft_strsplit(char const *s, char c)
 {
-  size_t  i;
-  size_t  j;
-  size_t  x;
-  size_t  y;
-  char    **str;
+	size_t  i;
+	size_t  j;
+	size_t  x;
+	size_t  y;
+	char    **str;
 
-  x = 0;
-  y = 0;
-  i = 0;
-  j = ft_line_count(s, c);
-  if (!(str = (char **)malloc(sizeof(char *) * j + 1)))
-    return (NULL);
-  while (i < j)
-    {
-      x = y;
-      while (s[x] == c && s[x++])
-	y = x;
-      while (s[y] != c && s[y])
-	y++;
-      str[i] = ft_strxdup(s, x, y);
-      i++;
-      while (s[y] == c && s[y])
-	y++;
-    }
-  return (str);
+	x = 0;
+	y = 0;
+	i = 0;
+	j = ft_line_count(s, c);
+	if (!(str = (char **)malloc(sizeof(char *) * j + 1)))
+		return (NULL);
+	while (i < j)
+	{
+		x = y;
+		while (s[x] == c && s[x++])
+			y = x;
+		while (s[y] != c && s[y])
+			y++;
+		str[i] = ft_strxdup(s, x, y);
+		i++;
+		while (s[y] == c && s[y])
+			y++;
+	}
+	return (str);
 }
 
 char    *ft_strcat(char *s1, const char *s2)
@@ -161,11 +166,11 @@ int		main(int ac, char **av)
 	  {
 		ok = ft_fillit_read_open(av);
 		ft_putstr(ok[0]);
-		ft_putstr("============\n");
+		ft_putstr("\n============\n");
 		ft_putstr(ok[1]);
-		ft_putstr("============\n");
+		ft_putstr("\n============\n");
 		ft_putstr(ok[2]);
-		ft_putstr("============\n");
+		ft_putstr("\n============\n");
 	  }
 	return (0);
 }
