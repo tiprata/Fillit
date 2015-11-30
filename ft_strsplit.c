@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit_read_open.c                                 :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/29 11:32:24 by tiprata           #+#    #+#             */
-/*   Updated: 2015/11/30 21:24:15 by tiprata          ###   ########.fr       */
+/*   Created: 2015/11/30 14:09:19 by tiprata           #+#    #+#             */
+/*   Updated: 2015/11/30 15:03:24 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_file		ft_fillit_read_open(char **av)
+char    **ft_strsplit(char const *s, char c)
 {
-	char	buf[BUF_SIZE + 1];
-	t_file	file;
-	int i;
+	size_t  i;
+	size_t  j;
+	size_t  x;
+	char    **str;
 
+	x = 0;
 	i = 0;
-	file.fd = open(av[1], O_RDONLY);
-	file.stock = ft_memalloc(7);
-	file.tetrinb = 0;
-	while ((file.ret = read(file.fd, buf, BUF_SIZE)))
+	j = ft_line_count(s, c);
+	if (!(str = (char **)malloc(sizeof(char *) * j + 1)))
+		return (NULL);
+	while (i < j)
 	{
-		file.tetrinb++;
-		buf[file.ret] = '\0';
-		file.stock = ft_dupstrcat(file.stock, buf);
+		str[i] = ft_strsub(s, x, 5);
+		x += 5;
+		i++;
 	}
-	i = ft_strlen(file.stock);
-	file.stock[i + 1] = '\0';
-	file.total = ft_strsplit(file.stock, '\n');
-	return (file);
+	return (str);
 }

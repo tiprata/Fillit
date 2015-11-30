@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit_read_open.c                                 :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/29 11:32:24 by tiprata           #+#    #+#             */
-/*   Updated: 2015/11/30 21:24:15 by tiprata          ###   ########.fr       */
+/*   Created: 2015/11/30 14:57:14 by tiprata           #+#    #+#             */
+/*   Updated: 2015/11/30 21:24:16 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-t_file		ft_fillit_read_open(char **av)
+int     main(int ac, char **av)
 {
-	char	buf[BUF_SIZE + 1];
-	t_file	file;
-	int i;
+	t_file file;
 
-	i = 0;
-	file.fd = open(av[1], O_RDONLY);
-	file.stock = ft_memalloc(7);
-	file.tetrinb = 0;
-	while ((file.ret = read(file.fd, buf, BUF_SIZE)))
+	if (ac > 1)
 	{
-		file.tetrinb++;
-		buf[file.ret] = '\0';
-		file.stock = ft_dupstrcat(file.stock, buf);
+		file = ft_fillit_read_open(av);
+		file = ft_analysis(file);
 	}
-	i = ft_strlen(file.stock);
-	file.stock[i + 1] = '\0';
-	file.total = ft_strsplit(file.stock, '\n');
-	return (file);
+    return (0);
 }
