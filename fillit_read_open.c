@@ -13,6 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 int		ft_strlen(char *str)
 {
@@ -27,6 +28,81 @@ int		ft_strlen(char *str)
 void	ft_putstr(char *str)
 {
 	write(1, str, ft_strlen(str));
+}
+
+char    *ft_strxdup(char const *s, size_t x, size_t y)
+{
+  size_t          i;
+  char            *str;
+
+  i = 0;
+  if (!(str = (char *)malloc(sizeof(char) * y - x + 1)))
+    return (NULL);
+  while (x < y)
+    {
+      str[i] = s[x];
+      i++;
+      x++;
+    }
+  str[i] = '\0';
+  return (str);
+}
+
+size_t  ft_line_count(char const *s, char c)
+{
+  size_t i;
+  size_t result;
+  size_t k;
+
+  k = 0;
+  result = 0;
+  i = 0;
+  while (s[i])
+    {
+      if (s[i] == c)
+	{
+	  while (s[i] == c)
+	    if (s[++i] == '\0' && k == 0)
+	      return (result);
+	  result++;
+	}
+      else
+	{
+	  k = 1;
+	  if (s[++i + 1] == '\0' && result == 0)
+	    return (1);
+	}
+    }
+  return (s[i - 1] == c && k == 1 && result != 1 ? result - 1 : result);
+}
+
+char    **ft_strsplit(char const *s, char c)
+{
+  size_t  i;
+  size_t  j;
+  size_t  x;
+  size_t  y;
+  char    **str;
+
+  x = 0;
+  y = 0;
+  i = 0;
+  j = ft_line_count(s, c);
+  if (!(str = (char **)malloc(sizeof(char *) * j + 1)))
+    return (NULL);
+  while (i < j)
+    {
+      x = y;
+      while (s[x] == c && s[x++])
+	y = x;
+      while (s[y] != c && s[y])
+	y++;
+      str[i] = ft_strxdup(s, x, y);
+      i++;
+      while (s[y] == c && s[y])
+	y++;
+    }
+  return (str);
 }
 
 char    *ft_strcat(char *s1, const char *s2)
@@ -54,10 +130,10 @@ char	*ft_dupstrcat(char *s1, char *s2)
 	return (str);
 }
 
-char *ft_fillit_read_open(char **av)
+char	**ft_fillit_read_open(char **av)
 {
 	char	buf[BUF_SIZE + 1];
-//	char **re_turn;
+	char **re_turn;
 	t_file	file;
 	int i;
 
@@ -73,14 +149,23 @@ char *ft_fillit_read_open(char **av)
 		file.stock = ft_dupstrcat(file.stock, buf);
 	}
 	file.stock[i * BUF_SIZE + 1] = '\0';
-	return (file.stock);
-	//tab = tab_it(stock);
-	//return (tab);
+	re_turn = ft_strsplit(file.stock, '\n');
+	return (re_turn);
 }
 
 int		main(int ac, char **av)
 {
+  char **ok;
+
 	if (ac > 1)
-		ft_putstr(ft_fillit_read_open(av));
+	  {
+		ok = ft_fillit_read_open(av);
+		ft_putstr(ok[0]);
+		ft_putstr("============\n");
+		ft_putstr(ok[1]);
+		ft_putstr("============\n");
+		ft_putstr(ok[2]);
+		ft_putstr("============\n");
+	  }
 	return (0);
 }
