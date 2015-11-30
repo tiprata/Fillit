@@ -6,15 +6,16 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 16:01:23 by tiprata           #+#    #+#             */
-/*   Updated: 2015/11/30 21:24:13 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/11/30 21:26:21 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 t_file	ft_analysis(t_file file)
 {
 	int i;
+	int j;
 
 	i = 0;
 
-	while (file.]
+	while (file.total[i][j])
 }
