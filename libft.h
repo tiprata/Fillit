@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/01 17:34:16 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/01 19:02:35 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,28 @@ typedef struct	s_file
 	int		tetrinb;
 }				t_file;
 
+typedef struct	s_file
+{
+	int	su; // stick up
+	int	sd; // stick down
+	int	square; // explicit
+	int	ll; // L
+	int	rll; // reverse long L
+	int	sl; // short L
+	int	rsl; // reverse short L
+	int	ill; // invert long L
+	int	isl; // invert short L
+	int	irsl; // invert reverse short L
+	int	irll; // invert reverse long L
+	int	t; // T
+	int	rt; // Reverse T
+	int	lt; // left T
+	int	rit; // right T
+	int	di; // # (diese)
+	int	rdi; // reverse #
+	int	udi; // up #
+	int	ddi; // down #
+}				t_file;
 int     ft_strlen(char *str);
 void    ft_putchar(char c);
 void    ft_putstr(char *str);
