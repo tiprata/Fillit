@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/01 19:02:35 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/01 19:04:16 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct	s_file
 	int		tetrinb;
 }				t_file;
 
-typedef struct	s_file
+typedef struct	s_form
 {
 	int	su; // stick up
 	int	sd; // stick down
@@ -50,7 +50,7 @@ typedef struct	s_file
 	int	rdi; // reverse #
 	int	udi; // up #
 	int	ddi; // down #
-}				t_file;
+}				t_form;
 int     ft_strlen(char *str);
 void    ft_putchar(char c);
 void    ft_putstr(char *str);
