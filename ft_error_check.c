@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_error_check.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/30 14:57:14 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/01 17:00:39 by tiprata          ###   ########.fr       */
+/*   Created: 2015/12/01 16:49:44 by tiprata           #+#    #+#             */
+/*   Updated: 2015/12/01 17:20:18 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int     main(int ac, char **av)
+
+int		ft_error_check(t_file file)
 {
-	t_file file;
-
-	if (ac > 1)
+	while (file.stock[file.count++])
 	{
-		file = ft_fillit_read_open(av);
-		if (ft_error_check(file) == -1)
+		if (file.stock[file.count] != '#' && file.stock[file.count] != '.'
+			&& file.stock[file.count] != '\n')
 		{
-			write(1, "error\n", 6);
-			return (0);
+			ft_putchar();
+			return (-1);
 		}
+		if (file.stock[file.count] == '#')
+			file.err++;
 	}
-    return (0);
+	if (file.tetrinb > 26 || file.err != 4 *file.tetrinb  ||
+		file.err * BUF_SIZE != ft_strlen(file.stock))
+		return (-1);
+	ft_putchar(file.err + 48);
+	return (0);
 }

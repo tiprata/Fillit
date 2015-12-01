@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 11:32:24 by tiprata           #+#    #+#             */
-/*   Updated: 2015/11/30 21:24:15 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/01 17:13:52 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ t_file		ft_fillit_read_open(char **av)
 	{
 		file.tetrinb++;
 		buf[file.ret] = '\0';
+//		while (buf[file.count++])
+//			if (buf[file.count] == '#')
+//				file.err++;
 		file.stock = ft_dupstrcat(file.stock, buf);
 	}
 	i = ft_strlen(file.stock);
