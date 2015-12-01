@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fillit_read_open.c                                 :+:      :+:    :+:   */
+/*   ft_detect_forms.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/11/29 11:32:24 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/01 19:15:22 by tiprata          ###   ########.fr       */
+/*   Created: 2015/12/01 19:07:16 by tiprata           #+#    #+#             */
+/*   Updated: 2015/12/01 19:21:51 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_file		ft_fillit_read_open(char **av)
+static t_form	ft_is_square(char **str)
 {
-	char	buf[BUF_SIZE + 1];
-	t_file	file;
+	if (
+}
 
-	file.fd = open(av[1], O_RDONLY);
-	file.stock = ft_memalloc(7);
-	file.tetrinb = 0;
-	while ((file.ret = read(file.fd, buf, BUF_SIZE)))
+t_form	ft_detect_forms(t_file file)
+{
+	t_form form;
+	int i;
+	while (i < file.tetrinb)
 	{
-		file.tetrinb++;
-		buf[file.ret] = '\0';
-		file.stock = ft_dupstrcat(file.stock, buf);
+		t_form = ft_is_square(file.total);
+		i++;
 	}
-	file.total = ft_strsplit(file.stock, '\n');
-	return (file);
+	return (form);
 }

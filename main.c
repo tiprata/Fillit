@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 14:57:14 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/01 17:59:49 by shabbach         ###   ########.fr       */
+/*   Updated: 2015/12/01 19:16:41 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 int     main(int ac, char **av)
 {
 	t_file file;
+	t_form form;
 
 	if (ac != 2)
 	{
@@ -24,6 +25,7 @@ int     main(int ac, char **av)
 	}
 
 	file = ft_fillit_read_open(av);
+	form = ft_detect_forms(file);
 	if (ft_error_check(file) == -1)
 	{
 		write(1, "error\n", 6);
