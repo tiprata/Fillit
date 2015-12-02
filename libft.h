@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/01 19:11:06 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/02 13:30:23 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ typedef struct	s_pos
 {
 	int x;
 	int y;
-	x = 0;
-	y = 0;
 }				t_pos;
 
 typedef struct	s_file

@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 19:07:16 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/02 14:41:13 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/02 14:57:14 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,21 @@ static t_form	ft_is_stick(t_file file, t_form form, t_pos pos, int i)
 			while (file.total[pos.x][pos.y] == '#')
 				pos.x++;
 			if (pos.x == 3 * i)
-				form.su++; 
+				form.su++;
 		}
 	return (form)
 }
 
+static t_form	ft_is_t(t_file file, t_form form, t_pos pos, int i)
+{
+	while (file.total[pos.x][pos.y] != '#' && file.total[pos.x][pos.y])
+		{
+			if (file.total[pos.x][pos.y] == '\n')
+				pos.x++;
+			pos.y++;
+		}
+	if (file
+}
 t_form	ft_detect_forms(t_file file)
 {
 	t_form form;
