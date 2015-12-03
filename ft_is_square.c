@@ -6,23 +6,20 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 20:36:47 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/02 20:37:38 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/03 02:23:21 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_form   ft_is_square(t_file file, t_form form, t_pos pos)
+t_form   ft_is_square(char *str, t_form form)
 {
-    while (file.total[pos.x][pos.y] != '#' && file.total[pos.x][pos.y])
-	{
-		if (file.total[pos.x][pos.y] == '\n')
-			pos.x++;
-		pos.y++;
-	}
-	if (file.total[pos.x][pos.y + 1] == '#')
-		if (file.total[pos.x + 1][pos.y] == '#')
-			if (file.total[pos.x + 1][pos.y + 1])
-				form.square++;
+	int i;
+
+	i = 0;
+	while (str[i] != '#' && str[i])
+		i++;
+	if (str[i + 1] == '#' && str[i + 4] == '#' && str[i + 5] == '#')
+		form.square++;
 	return (form);
 }

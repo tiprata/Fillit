@@ -6,36 +6,26 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 20:48:11 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/02 20:49:46 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/03 01:46:19 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_form   ft_is_sharp(t_file file, t_form form, t_pos pos)
+t_form   ft_is_sharp(char *str, t_form form)
 {
-	while (file.total[pos.x][pos.y] != '#' && file.total[pos.x][pos.y])
-	{
-		if (file.total[pos.x][pos.y] == '\n')
-			pos.x++;
-		pos.y++;
-	}
-	if (file.total[pos.x][pos.y + 1] == '#')
-	{
-		if (file.total[pos.x + 1][pos.y] == '#' &&
-			file.total[pos.x + 1][pos.y + 1] == '#')
-			form.rsh++;
-		if (file.total[pos.x + 1][pos.y] == '#' &&
-			file.total[pos.x + 1][pos.y - 1] == '#')
-			form.sh++;
-	}
-	if (file.total[pos.x + 1][pos.y] == '#')
-	{
-		if (file.total[pos.x + 1][pos.y + 1] == '#' &&
-			file.total[pos.x + 2][pos.y + 1] == '#')
-			form.ush++;
-		if (file.total[pos.x + 1][pos.y - 1] == '#' &&
-			file.total[pos.x + 2][pos.y - 1] == '#')
-			form.ursh++;
-	}
+	int i;
+
+	i = 0;
+	while (str[i] && str[i] != '#')
+		i++;
+	if (str[i + 1] == '#' && str[i + 3] == '#' && str[i + 4] == '#')
+		form.s++;
+	if (str[i + 1] == '#' && str[i + 4] == '#' && str[i + 5] == '#')
+		form.z++;
+	if (str[i + 4] == '#' && str[i + 5] == '#' && str[i + 9] == '#')
+		form.ups++;
+	if (str[i + 3] == '#' && str[i + 4] == '#' && str[i + 7] == '#')
+		form.upz++;
+	return (form);
 }
