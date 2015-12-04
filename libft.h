@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 17:27:38 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 17:35:46 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,16 @@ t_file	ft_fillit_read_open(char **av);
 void    *ft_memset(void *b, int c, size_t n);
 void    *ft_memalloc(size_t size);
 int     ft_error_check(t_file file);
-void	ft_is_sharp(char *str, t_list list);
-void	ft_is_square(char *str, t_list list);
-void	ft_is_stick(char *str, t_list list);
-void	ft_is_t(char *str, t_list list);
-void	ft_is_l(char *str, t_list lsit);
-void	ft_detect_forms(char *str, t_list list);
+void	ft_is_sharp(char *str, t_list *list);
+void	ft_is_square(char *str, t_list *list);
+void	ft_is_stick(char *str, t_list *list);
+void	ft_is_t(char *str, t_list *list);
+void	ft_is_l(char *str, t_list *list);
+void	ft_detect_forms(char *str, t_list *list);
 void    ft_putnbr(int n);
+t_list  *ft_create_elem(char *elem);
+char	*ft_strdup(char *s1);
+char	*ft_strcpy(char *dest, char *src);
 void    ft_list_push_back(t_list *begin_list, char *newelem);
 
 #endif

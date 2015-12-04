@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push_back.c                                :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/04 12:39:15 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 18:18:50 by tiprata          ###   ########.fr       */
+/*   Created: 2015/11/23 19:44:57 by tiprata           #+#    #+#             */
+/*   Updated: 2015/12/04 17:35:55 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <string.h>
 
-void	ft_list_push_back(t_list *begin_list, char *newelem)
+char	*ft_strcpy(char *dest, char *src)
 {
-	t_list *list;
+	size_t size;
 
-	if (!(begin_list))
+	size = 0;
+	while (src[size])
 	{
-		ft_putstr("NEIN\n");
-		begin_list = ft_create_elem(newelem);
+		dest[size] = src[size];
+		size++;
 	}
-	else
-	{
-		list = begin_list;
-		while (list->next)
-		{
-			list = list->next;
-		}
-		if (list->next == NULL)
-		{
-			ft_putstr("\n|__________|______|\n");
-			list->next = ft_create_elem(newelem);
-		}
-	}
+	dest[size] = '\0';
+	return (dest);
 }

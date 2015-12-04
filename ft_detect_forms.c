@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 19:07:16 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 17:18:13 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 18:13:34 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ void    ft_putnbr(int n)
 
 void	ft_detect_forms(char *str, t_list *list)
 {
-	list = ft_is_square(str, list);
-	list = ft_is_stick(str, list);
-	list = ft_is_t(str, list);
-	list = ft_is_sharp(str, list);
-	list = ft_is_l(str, list);
-	return (list);
+	ft_is_t(str, list);
+	ft_is_square(str, list);
+	ft_is_stick(str, list);
+	ft_is_sharp(str, list);
+	ft_is_l(str, list);
 }
