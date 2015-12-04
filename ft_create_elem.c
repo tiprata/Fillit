@@ -11,9 +11,9 @@ t_list	*ft_create_elem(char *elem)
 		list->str = NULL;
 	else
 	{
-//		ft_putstr("\npok\n");
 		list->str = ft_strdup(elem);
 		list->next = NULL;
+		ft_putstr("\npok\n");
 	}
 	return (list);
 }
