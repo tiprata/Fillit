@@ -8,7 +8,10 @@ t_list	*ft_create_elem(char *elem)
 	if (!(list = (t_list *)malloc(sizeof(*list))))
 		return (NULL);
 	if (!(elem))
+	{
 		list->str = NULL;
+		list->next = NULL;
+	}
 	else
 	{
 		list->str = ft_strdup(elem);

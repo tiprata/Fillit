@@ -6,13 +6,13 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 20:43:19 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 17:27:15 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 21:00:12 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void   ft_is_t(char *str, t_list *list)
+void   ft_is_t(char *str, t_list **list)
 {
 	int i;
 

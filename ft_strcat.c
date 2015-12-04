@@ -6,13 +6,13 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 14:08:47 by tiprata           #+#    #+#             */
-/*   Updated: 2015/11/30 14:12:33 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 20:23:39 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcat(char *s1, const char *s2)
+char    *ft_strcat(char *s1, char *s2)
 {
     size_t size;
     size_t count;

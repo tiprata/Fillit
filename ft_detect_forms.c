@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 19:07:16 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 18:13:34 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 21:15:16 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void    ft_putnbr(int n)
     }
 }
 
-void	ft_detect_forms(char *str, t_list *list)
+void	ft_detect_forms(char *str, t_list **list)
 {
 	ft_is_t(str, list);
 	ft_is_square(str, list);

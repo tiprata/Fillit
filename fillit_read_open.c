@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 11:32:24 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 19:02:59 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 21:12:41 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ t_file		ft_fillit_read_open(char **av)
 	t_list *list;
 	t_list *afflist;
 
-	list = ft_create_elem("first");
-	afflist = list;
+//	list = ft_create_elem("first");
 	file.fd = open(av[1], O_RDONLY);
 	file.stock = ft_memalloc(7);
 	file.tetrinb = 0;
@@ -28,13 +27,14 @@ t_file		ft_fillit_read_open(char **av)
 	{
 		file.tetrinb++;
 		buf[file.ret] = '\0';
-		ft_detect_forms(buf, list);
+		ft_detect_forms(buf, &list);
 		file.stock = ft_dupstrcat(file.stock, buf);
 	}
+	afflist = list;
 	while (afflist)
 	{
-//		ft_putstr(afflist->str);
-//		ft_putstr("\n__________\n");
+		ft_putstr(afflist->str);
+		ft_putstr("\n__________\n");
 		afflist = afflist->next;
 		}
 	return (file);
