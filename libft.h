@@ -49,7 +49,7 @@ typedef struct	s_form
 	int	s; // s
 	int	z; // z
 	int	ups; // up s
-	int	upz; // down z
+	int	upz; // up z
 }				t_form;
 int     ft_strlen(char *str);
 void    ft_putchar(char c);
@@ -64,6 +64,7 @@ t_form   ft_is_sharp(char *str, t_form form);
 t_form   ft_is_square(char *str, t_form form);
 t_form   ft_is_stick(char *str, t_form form);
 t_form   ft_is_t(char *str, t_form form);
-t_form  ft_detect_forms(t_file file);
+t_form  ft_detect_forms(char *str, t_form form);
 void    ft_putnbr(int n);
+t_form  ft_init_form(t_form form);
 #endif

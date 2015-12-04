@@ -19,7 +19,7 @@ t_form   ft_is_square(char *str, t_form form)
 	i = 0;
 	while (str[i] != '#' && str[i])
 		i++;
-	if (str[i + 1] == '#' && str[i + 4] == '#' && str[i + 5] == '#')
+	if (str[i + 1] == '#' && str[i + 5] == '#' && str[i + 6] == '#')
 		form.square++;
 	return (form);
 }

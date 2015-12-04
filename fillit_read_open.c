@@ -24,10 +24,19 @@ t_file		ft_fillit_read_open(char **av)
 	file.tetrinb = 0;
 	while ((file.ret = read(file.fd, buf, BUF_SIZE)))
 	{
-		file.tetrinb++;
-		buf[file.ret] = '\0';
-
-		file.stock = ft_dupstrcat(file.stock, buf);
+	  file.tetrinb++;
+	  buf[file.ret] = '\0';
+	  form = ft_detect_forms(buf, form);
+	  file.stock = ft_dupstrcat(file.stock, buf);
 	}
+	ft_putchar('\n');
+	ft_putnbr(form.square);
+        ft_putchar('\n');
+        ft_putnbr(form.su);
+        ft_putchar('\n');
+        ft_putnbr(form.sd);
+	ft_putchar('\n');
+        ft_putnbr(form.s);
+	ft_putchar('\n');
 	return (file);
 }

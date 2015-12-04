@@ -16,7 +16,6 @@
 int     main(int ac, char **av)
 {
 	t_file file;
-	t_form form;
 
 	if (ac != 2)
 	{
@@ -25,7 +24,6 @@ int     main(int ac, char **av)
 	}
 
 	file = ft_fillit_read_open(av);
-	form = ft_detect_forms(file);
 	if (ft_error_check(file) == -1)
 	{
 		write(1, "error\n", 6);

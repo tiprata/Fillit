@@ -20,8 +20,8 @@ t_form   ft_is_stick(char *str, t_form form)
 	while (str[i] && str[i] != '#')
 		i++;
 	if (str[i + 1] == '#' && str[i + 2] == '#' && str[i + 3] == '#')
-		form.su++;
-	if (str[i + 4] == '#' && str[i + 8] == '#' && str[i + 12] == '#')
 		form.sd++;
+	if (str[i + 5] == '#' && str[i + 10] == '#' && str[i + 15] == '#')
+		form.su++;
     return (form);
 }

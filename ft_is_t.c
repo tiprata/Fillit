@@ -17,15 +17,15 @@ t_form   ft_is_t(char *str, t_form form)
 	int i;
 
 	i = 0;
-	while (str[i] && str[i] != '\0')
+	while (str[i] != '#' && str[i] != '\0')
 		i++;
-	if (str[i + 3] == '#' && str[i + 4] == '#' && str[i + 8] == '#')
+	if (str[i + 4] == '#' && str[i + 5] == '#' && str[i + 10] == '#')
 		form.lt++;
-	if (str[i + 4] == '#' && str[i + 5] == '#' && str[i + 8] == '#')
+	if (str[i + 5] == '#' && str[i + 6] == '#' && str[i + 10] == '#')
 		form.rit++;
-	if (str[i + 1] == '#' && str[i + 2] == '#' && str[i + 5] == '#')
+	if (str[i + 1] == '#' && str[i + 2] == '#' && str[i + 6] == '#')
 		form.t++;
-	if (str[i + 3] == '#' && str[i + 4] == '#' && str[i + 5] == '#')
+	if (str[i + 4] == '#' && str[i + 5] == '#' && str[i + 6] == '#')
 		form.rt++;
 	return (form);
 }

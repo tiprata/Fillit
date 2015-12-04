@@ -19,13 +19,13 @@ t_form   ft_is_sharp(char *str, t_form form)
 	i = 0;
 	while (str[i] && str[i] != '#')
 		i++;
-	if (str[i + 1] == '#' && str[i + 3] == '#' && str[i + 4] == '#')
-		form.s++;
 	if (str[i + 1] == '#' && str[i + 4] == '#' && str[i + 5] == '#')
+		form.s++;
+	if (str[i + 1] == '#' && str[i + 6] == '#' && str[i + 7] == '#')
 		form.z++;
 	if (str[i + 4] == '#' && str[i + 5] == '#' && str[i + 9] == '#')
 		form.ups++;
-	if (str[i + 3] == '#' && str[i + 4] == '#' && str[i + 7] == '#')
+	if (str[i + 5] == '#' && str[i + 6] == '#' && str[i + 11] == '#')
 		form.upz++;
 	return (form);
 }

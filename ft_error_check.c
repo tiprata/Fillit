@@ -25,7 +25,7 @@ int		ft_error_check(t_file file)
 			file.err++;
 	}
 	if (file.tetrinb > 26 || file.err != 4 * file.tetrinb ||
-		(file.err / 4) * BUF_SIZE != ft_strlen(file.stock))
+		(file.err / file.tetrinb) * BUF_SIZE != ft_strlen(file.stock))
 		return (-1);
 	return (0);
 }

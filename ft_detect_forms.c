@@ -47,26 +47,17 @@ t_form	ft_init_form(t_form form)
 	form.rt = 0;
 	form.lt = 0;
 	form.rit = 0;
-	form.sh = 0;
-	form.rsh = 0;
-	form.ush = 0;
-	form.ursh = 0;
+	form.s = 0;
+	form.z = 0;
+	form.ups = 0;
+	form.upz = 0;
 	return (form);
 }
-t_form	ft_detect_forms(char *str)
+t_form	ft_detect_forms(char *str, t_form form)
 {
-	t_form form;
-
-	form = ft_init_form(form);
-	form = ft_is_square(file, form);
-	form = ft_is_stick(file, form);
-	form = ft_is_t(file, form);
-	form = ft_is_sharp(file, form);
-	while (i < 20)
-	{
-		ft_putstr(file.total[i]);
-		ft_putchar('|');
-		i++;
-}
+	form = ft_is_square(str, form);
+	form = ft_is_stick(str, form);
+	form = ft_is_t(str, form);
+	form = ft_is_sharp(str, form);
 	return (form);
 }
