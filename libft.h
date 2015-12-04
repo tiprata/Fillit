@@ -49,7 +49,7 @@ typedef struct	s_form
 	int	s; // s
 	int	z; // z
 	int	ups; // up s
-	int	upz; // up z
+	int	upz; // up z A remplacer par liste chainée
 }				t_form;
 int     ft_strlen(char *str);
 void    ft_putchar(char c);
