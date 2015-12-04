@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 16:49:44 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 11:35:59 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 19:03:49 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ int		ft_error_check(t_file file)
 	{
 		if (file.stock[file.count] != '#' && file.stock[file.count] != '.'
 			&& file.stock[file.count] != '\n' && file.stock[file.count] != '\0')
-		{
 			return (-1);
-		}
 		if (file.stock[file.count] == '#')
 			file.err++;
 		file.count++;
 	}
-	ft_putnbr(file.tetrinb);
 	if (file.tetrinb > 26 || file.err != 4 * file.tetrinb ||
 		file.tetrinb * BUF_SIZE != ft_strlen(file.stock))
 		return (-1);
