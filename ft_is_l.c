@@ -6,13 +6,13 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:41:50 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 11:11:40 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 17:25:30 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_form   ft_is_l(char *str, t_form form)
+void   ft_is_l(char *str, t_list *list)
 {
 	int i;
 
@@ -20,20 +20,19 @@ t_form   ft_is_l(char *str, t_form form)
 	while (str[i] && str[i] != '#')
 		i++;
 	if (str[i + 5] == '#' && str[i + 10] == '#' && str[i + 11] == '#')
-		form.ll++;
+		ft_list_push_back(list, "ll");
 	if (str[i + 1] == '#' && str[i + 5] == '#' && str[i + 10] == '#')
-		form.rll++;
+		ft_list_push_back(list, "rll");
 	if (str[i + 5] == '#' && str[i + 6] == '#' && str[i + 7] == '#')
-		form.sl++;
+		ft_list_push_back(list, "sl");
 	if (str[i + 1] == '#' && str[i + 2] == '#' && str[i + 5] == '#')
-		form.rsl++;
+		ft_list_push_back(list, "rsl");
 	if (str[i + 5] == '#' && str[i + 9] == '#' && str[i + 10] == '#')
-		form.ill++;
+		ft_list_push_back(list, "ill");;
 	if (str[i + 3] == '#' && str[i + 4] == '#' && str[i + 5] == '#')
-		form.isl++;
+		ft_list_push_back(list, "isl");;
 	if (str[i + 1] == '#' && str[i + 2] == '#' && str[i + 7] == '#')
-		form.irsl++;
+		ft_list_push_back(list, "irsl");;
 	if (str[i + 1] == '#' && str[i + 6] == '#' && str[i + 11] == '#')
-		form.irll++;
-	return (form);
+		ft_list_push_back(list, "irll");;
 }

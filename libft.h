@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 11:10:41 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 17:27:38 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@ typedef struct	s_file
 	int		tetrinb;
 }				t_file;
 
+typedef struct	s_list
+{
+	char *str;
+	struct s_list	*next;
+}				t_list;
 typedef struct	s_form
 {
 	int	su; // stick up
@@ -60,12 +65,13 @@ t_file	ft_fillit_read_open(char **av);
 void    *ft_memset(void *b, int c, size_t n);
 void    *ft_memalloc(size_t size);
 int     ft_error_check(t_file file);
-t_form   ft_is_sharp(char *str, t_form form);
-t_form   ft_is_square(char *str, t_form form);
-t_form   ft_is_stick(char *str, t_form form);
-t_form   ft_is_t(char *str, t_form form);
-t_form   ft_is_l(char *str, t_form form);
-t_form  ft_detect_forms(char *str, t_form form);
+void	ft_is_sharp(char *str, t_list list);
+void	ft_is_square(char *str, t_list list);
+void	ft_is_stick(char *str, t_list list);
+void	ft_is_t(char *str, t_list list);
+void	ft_is_l(char *str, t_list lsit);
+void	ft_detect_forms(char *str, t_list list);
 void    ft_putnbr(int n);
-t_form  ft_init_form(t_form form);
+void    ft_list_push_back(t_list *begin_list, char *newelem);
+
 #endif

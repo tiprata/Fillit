@@ -6,13 +6,13 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/02 20:43:19 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/03 03:13:29 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 17:27:15 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_form   ft_is_t(char *str, t_form form)
+void   ft_is_t(char *str, t_list *list)
 {
 	int i;
 
@@ -20,12 +20,11 @@ t_form   ft_is_t(char *str, t_form form)
 	while (str[i] != '#' && str[i] != '\0')
 		i++;
 	if (str[i + 4] == '#' && str[i + 5] == '#' && str[i + 10] == '#')
-		form.lt++;
+		ft_list_push_back(list, "lt");;
 	if (str[i + 5] == '#' && str[i + 6] == '#' && str[i + 10] == '#')
-		form.rit++;
+		ft_list_push_back(list, "rit");;
 	if (str[i + 1] == '#' && str[i + 2] == '#' && str[i + 6] == '#')
-		form.t++;
+		ft_list_push_back(list, "t");;
 	if (str[i + 4] == '#' && str[i + 5] == '#' && str[i + 6] == '#')
-		form.rt++;
-	return (form);
+		ft_list_push_back(list, "rt");
 }

@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 19:07:16 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 11:27:03 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 17:18:13 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,12 @@ void    ft_putnbr(int n)
     }
 }
 
-t_form	ft_init_form(t_form form)
+void	ft_detect_forms(char *str, t_list *list)
 {
-	form.su = 0;
-	form.sd = 0;
-	form.square = 0;
-	form.ll = 0;
-	form.rll = 0;
-	form.sl = 0;
-	form.rsl = 0;
-	form.ill = 0;
-	form.isl = 0;
-	form.irsl = 0;
-	form.irll = 0;
-	form.t = 0;
-	form.rt = 0;
-	form.lt = 0;
-	form.rit = 0;
-	form.s = 0;
-	form.z = 0;
-	form.ups = 0;
-	form.upz = 0;
-	return (form);
-}
-t_form	ft_detect_forms(char *str, t_form form)
-{
-	form = ft_is_square(str, form);
-	form = ft_is_stick(str, form);
-	form = ft_is_t(str, form);
-	form = ft_is_sharp(str, form);
-	form = ft_is_l(str, form);
-	return (form);
+	list = ft_is_square(str, list);
+	list = ft_is_stick(str, list);
+	list = ft_is_t(str, list);
+	list = ft_is_sharp(str, list);
+	list = ft_is_l(str, list);
+	return (list);
 }

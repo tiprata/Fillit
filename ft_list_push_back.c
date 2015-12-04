@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_square.c                                     :+:      :+:    :+:   */
+/*   ft_list_push_back.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/02 20:36:47 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 17:21:16 by tiprata          ###   ########.fr       */
+/*   Created: 2015/12/04 12:39:15 by tiprata           #+#    #+#             */
+/*   Updated: 2015/12/04 15:53:11 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void   ft_is_square(char *str, t_list list)
+void	ft_list_push_back(t_list *begin_list, char *newelem)
 {
-	int i;
+	t_list *list;
 
-	i = 0;
-	while (str[i] != '#' && str[i])
-		i++;
-	if (str[i + 1] == '#' && str[i + 5] == '#' && str[i + 6] == '#')
-		ft_push_back(list, "square");
+	list = begin_list;
+	if (!(begin_list))
+	{
+		ft_putstr("NEIN\n");
+		begin_list = ft_create_elem(newelem);
+	}
+	while (list->next)
+	{
+		ft_putstr("}");
+		list = list->next;
+	}
+	ft_putstr("!\n");
+	list->next = ft_create_elem(newelem);
 }
