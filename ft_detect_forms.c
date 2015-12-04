@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 19:07:16 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/03 02:08:51 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 11:27:03 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ t_form	ft_detect_forms(char *str, t_form form)
 	form = ft_is_stick(str, form);
 	form = ft_is_t(str, form);
 	form = ft_is_sharp(str, form);
+	form = ft_is_l(str, form);
 	return (form);
 }

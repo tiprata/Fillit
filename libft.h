@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/03 02:44:33 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/04 11:10:41 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ t_form   ft_is_sharp(char *str, t_form form);
 t_form   ft_is_square(char *str, t_form form);
 t_form   ft_is_stick(char *str, t_form form);
 t_form   ft_is_t(char *str, t_form form);
+t_form   ft_is_l(char *str, t_form form);
 t_form  ft_detect_forms(char *str, t_form form);
 void    ft_putnbr(int n);
 t_form  ft_init_form(t_form form);
