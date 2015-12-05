@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 18:04:43 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/05 19:44:56 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/05 20:44:16 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_resolve(t_list **begin_list)
 	list = *begin_list;
 	while (list->next)
 	{
-		ft_place_into_map(str, list->str);
+		str = ft_place_into_map(str, list->str);
 		list = list->next;
 	}
 }

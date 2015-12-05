@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/05 18:52:11 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/05 20:48:22 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 # include <string.h>
 # define BUF_SIZE 21
 
+t_opp gl_opptab[] = {{"-", &ft_sub}, \
+					 {"+", &ft_
 typedef struct	s_file
 {
 	int		count;
@@ -61,5 +63,5 @@ char    *ft_strjoin(char *s1, char *s2);
 int     ft_list_size(t_list **begin_list);
 void    ft_resolve(t_list **begin_list);
 char **ft_tab_init(int i);
-
+void    *ft_memset(void *b, int c, size_t n);
 #endif
