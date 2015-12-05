@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_resolve.c                                       :+:      :+:    :+:   */
+/*   ft_tab_init.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/05 18:04:43 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/05 19:44:56 by tiprata          ###   ########.fr       */
+/*   Created: 2015/12/05 18:35:23 by tiprata           #+#    #+#             */
+/*   Updated: 2015/12/05 18:44:56 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_resolve(t_list **begin_list)
+char **ft_tab_init(int i)
 {
-	int i;
-	t_list *list;
+	int j;
 	char **str;
 
-	i = ft_list_size(begin_list);
-	str = ft_tab_init(i);
-	list = *begin_list;
-	while (list->next)
+	j = 0;
+	if (!(str = (char **)malloc(sizeof(char *) * (i * 3))))
+		return (NULL);
+	while (j != i * 3)
 	{
-		ft_place_into_map(str, list->str);
-		list = list->next;
+		if (!(str[j] = (char *)malloc(sizeof(char) * i * 15)))
+			return (NULL);
+		j++;
 	}
+	return (str);
 }

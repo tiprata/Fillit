@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/29 11:32:24 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/05 17:55:05 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/05 18:19:59 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_file		ft_fillit_read_open(char **av)
 		ft_detect_forms(buf, &list);
 		file.stock = ft_dupstrcat(file.stock, buf);
 	}
+	ft_resolve(&list);
 	afflist = list;
 	while (afflist)
 	{
