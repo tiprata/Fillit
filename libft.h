@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 21:11:28 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/05 17:41:26 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # include <stdlib.h>
+# include <string.h>
 # define BUF_SIZE 21
 
 typedef struct	s_file
@@ -76,5 +77,5 @@ t_list  *ft_create_elem(char *elem);
 char	*ft_strdup(char *s1);
 char	*ft_strcpy(char *dest, char *src);
 void    ft_list_push_back(t_list **begin_list, char *newelem);
-
+char    *ft_strjoin(char *s1, char *s2);
 #endif

@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/30 14:57:14 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/02 22:44:56 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/05 18:09:17 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int     main(int ac, char **av)
 		write(1, "error\n", 6);
 		return (0);
 	}
-
 	file = ft_fillit_read_open(av);
 	if (ft_error_check(file) == -1)
 	{

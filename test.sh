@@ -1,2 +1,2 @@
 gcc -Wall -Wextra -Werror *.c
-./a.out ok
+./a.out sample.fillit

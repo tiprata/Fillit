@@ -5,17 +5,29 @@ t_list	*ft_create_elem(char *elem)
 {
 	t_list *list;
 
-	if (!(list = (t_list *)malloc(sizeof(*list))))
-		return (NULL);
-	if (!(elem))
+	list = (t_list *)malloc(sizeof(t_list));
+	list->next = NULL;
+	list->str = ft_strdup(elem);
+	return (list);
+/*
+	if (!(list = (t_list *)malloc(sizeof(t_list))))
 	{
+		ft_putstr("fail malloc\n");
+		return (NULL);
+	}
+	if (!elem)
+	{
+		ft_putstr("ELEM NOt FOUND\n");
 		list->str = NULL;
 		list->next = NULL;
 	}
 	else
 	{
+		ft_putstr("can put elem\n");
 		list->str = ft_strdup(elem);
 		list->next = NULL;
+		ft_putstr("elem put ok\n");
 	}
 	return (list);
+	*/
 }

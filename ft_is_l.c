@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/04 10:41:50 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/04 21:01:04 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/05 16:52:52 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,9 @@ void   ft_is_l(char *str, t_list **list)
 	i = 0;
 	while (str[i] && str[i] != '#')
 		i++;
+	if (!(ft_strlen(str) >= i + 11))
+		return ;
+	ft_putstr("strok\n");
 	if (str[i + 5] == '#' && str[i + 10] == '#' && str[i + 11] == '#')
 		ft_list_push_back(list, "ll");
 	if (str[i + 1] == '#' && str[i + 5] == '#' && str[i + 10] == '#')
