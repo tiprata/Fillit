@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/07 14:01:12 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/07 16:56:28 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,35 @@ typedef struct	s_list
 	struct s_list	*prev;
 	struct s_list	*next;
 }				t_list;
-typedef	char **(t_s_opp)(char *, char **);
+typedef	char **(t_s_opp)(char *, char **, int);
 
 typedef struct	s_opp
 {
 	char *str;
 	t_s_opp func;
+	int i;
 }				t_opp;
 
 t_opp gl_opptab[] = {
-	{"su", &ft_su},								\
-	{"sd", &ft_sd},										\
-	{"square", &ft_square},								\
-	{"ll", &ft_ll},										\
-	{"rll", &ft_rll},									\
-	{"sl", &ft_sl},										\
-	{"rsl", &ft_rsl},									\
-	{"ill", &ft_ill},									\
-	{"isl", &ft_isl},									\
-	{"irsl", &ft_irsl},									\
-	{"irll", &ft_irll},									\
-	{"t", &ft_t},										\
-	{"rt", &ft_rt},										\
-	{"lt", &ft_lt},										\
-	{"rit", &ft_rit},									\
-	{"s", &ft_s},										\
-	{"z", &ft_z},										\
-	{"ups", &ft_ups}, \
-	{"upz", &ft_upz}
+	{"su", &ft_su, i}, \
+	{"sd", &ft_sd, i}, \
+	{"square", &ft_square i}, \
+	{"ll", &ft_ll, i}, \
+	{"rll", &ft_rll, i}, \
+	{"sl", &ft_sl, i}, \
+	{"rsl", &ft_rsl, i}, \
+	{"ill", &ft_ill, i}, \
+	{"isl", &ft_isl, i}, \
+	{"irsl", &ft_irsl, i}, \
+	{"irll", &ft_irll, i},   \
+	{"t", &ft_t, i}, \
+	{"rt", &ft_rt, i}, \
+	{"lt", &ft_lt, i},   \
+	{"rit", &ft_rit, i}, \
+	{"s", &ft_s, i}, \
+	{"z", &ft_z, i}, \
+	{"ups", &ft_ups, i},\
+	{"upz", &ft_upz, i}
 };
 
 int     ft_strlen(char *str);
