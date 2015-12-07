@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 18:42:10 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/07 18:48:46 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/07 18:55:29 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ char	**ft_s(char *str, char **str, int k)
 	int j;
 
 	i = 0;
-	j = 0;
+	j = 1;
 	while (i < (k * 3) - 2 && j < (k * 3) - 3)
 	{
-		if (str[i][j] == '.' && str[i][j + 1] == '.' && str[i][j + 2] == '.' &&
+		if (str[i][j] == '.' && str[i][j + 1] == '.' && str[i + 1][j - 1] == '.' &&
 			str[i + 1][j] == '.')
 		{
 			str[i][j] = '#';
 			str[i][j + 1] = '#';
-			str[i][j + 2] = '#';
+			str[i + 1][j - 1] = '#';
 			str[i + 1][j] = '#';
 			return (str);
 		}
@@ -38,7 +38,7 @@ char	**ft_s(char *str, char **str, int k)
 		if (j == (k * 3) - 4)
 		{
 			i++;
-			j = 0;
+			j = 1;
 		}
 	}
 	return (str);
