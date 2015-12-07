@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/05 20:48:22 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/07 14:01:12 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,6 @@
 # include <string.h>
 # define BUF_SIZE 21
 
-t_opp gl_opptab[] = {{"-", &ft_sub}, \
-					 {"+", &ft_
 typedef struct	s_file
 {
 	int		count;
@@ -38,6 +36,35 @@ typedef struct	s_list
 	struct s_list	*prev;
 	struct s_list	*next;
 }				t_list;
+typedef	char **(t_s_opp)(char *, char **);
+
+typedef struct	s_opp
+{
+	char *str;
+	t_s_opp func;
+}				t_opp;
+
+t_opp gl_opptab[] = {
+	{"su", &ft_su},								\
+	{"sd", &ft_sd},										\
+	{"square", &ft_square},								\
+	{"ll", &ft_ll},										\
+	{"rll", &ft_rll},									\
+	{"sl", &ft_sl},										\
+	{"rsl", &ft_rsl},									\
+	{"ill", &ft_ill},									\
+	{"isl", &ft_isl},									\
+	{"irsl", &ft_irsl},									\
+	{"irll", &ft_irll},									\
+	{"t", &ft_t},										\
+	{"rt", &ft_rt},										\
+	{"lt", &ft_lt},										\
+	{"rit", &ft_rit},									\
+	{"s", &ft_s},										\
+	{"z", &ft_z},										\
+	{"ups", &ft_ups}, \
+	{"upz", &ft_upz}
+};
 
 int     ft_strlen(char *str);
 void    ft_putchar(char c);
