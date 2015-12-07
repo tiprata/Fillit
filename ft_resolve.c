@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 18:04:43 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/07 16:52:44 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/07 18:46:59 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_resolve(t_list **begin_list)
 	list = *begin_list;
 	while (list->next)
 	{
-		while (*gl_place[j].str != list->str)
+		while (*gl_placetab[j].str != list->str)
 		{
 			j++;
 		}

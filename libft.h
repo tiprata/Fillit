@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/07 16:56:28 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/07 18:48:23 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,16 @@ typedef struct	s_list
 	struct s_list	*prev;
 	struct s_list	*next;
 }				t_list;
-typedef	char **(t_s_opp)(char *, char **, int);
+typedef	char **(t_s_place)(char *, char **, int);
 
-typedef struct	s_opp
+typedef struct	s_place
 {
 	char *str;
-	t_s_opp func;
+	t_s_place func;
 	int i;
-}				t_opp;
+}				t_place;
 
-t_opp gl_opptab[] = {
+t_place gl_placetab[] = {
 	{"su", &ft_su, i}, \
 	{"sd", &ft_sd, i}, \
 	{"square", &ft_square i}, \
