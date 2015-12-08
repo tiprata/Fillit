@@ -6,13 +6,13 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 15:11:57 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/07 18:24:51 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/08 14:43:54 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "header.h"
 
-char	**ft_sl(char *str, char **str, int k)
+char	**ft_sl(char *str1, char **str2, int k)
 {
 	int i;
  	int j;
@@ -21,45 +21,14 @@ char	**ft_sl(char *str, char **str, int k)
 	j = 0;
 	while (i < (k * 3) - 2 && j < (k * 3) - 3)
 	{
-		if (str[i][j] == '.' && str[i + 1][j] == '.' && str[i + 1][j + 1] == '.'
-			&& str[i + 1][j + 2] == '.')
+		if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 1][j + 1] == '.'
+			&& str2[i + 1][j + 2] == '.')
 		{
-			str[i][j] = '#';
-			str[i + 1][j] = '#';
-			str[i + 1][j + 1] = '#';
-			str[i + 1][j + 2] = '#';
-			return (str);
-		}
-		else
-		{
-			j++;
-		}
-		if (j = (k * 3) - 4)
-		{
-			i++;
-			j = 0;
-		}
-	}
-	return (str);
-}
-
-char	**ft_rsl(char *str, char **str, int k)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (i < (k * 3) - 2 && j < (k * 3) - 3)
-	{
-		if (str[i][j] == '.' && str[i][j + 1] == '.' && str[i][j + 2] == '.' &&
-			str[i + 1][j] == '.')
-		{
-			str[i][j] = '#';
-			str[i][j + 1] = '#';
-			str[i][j + 2] = '#';
-			str[i + 1][j] = '#';
-			return (str);
+			str2[i][j] = '#';
+			str2[i + 1][j] = '#';
+			str2[i + 1][j + 1] = '#';
+			str2[i + 1][j + 2] = '#';
+			return (str2);
 		}
 		else
 		{
@@ -71,72 +40,10 @@ char	**ft_rsl(char *str, char **str, int k)
 			j = 0;
 		}
 	}
-	return (str);
+	return (str2);
 }
 
-char	**ft_ill(char *str, char **str, int k)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 1;
-	while (i < (k * 3) - 3 && j < (k * 3) - 2)
-	{
-		if (str[i][j] == '.' && str[i + 1][j] == '.'
-			&& str[i + 2][j] == '.' && str[i + 2][j - 1] == '.')
-		{
-			str[i][j] = '#';
-			str[i + 1][j] = '#';
-			str[i + 2][j] = '#';
-			str[i + 2][j - 1] = '#';
-			return (str);
-		}
-		else
-		{
-			j++;
-		}
-		if (j = (k * 3) - 3)
-		{
-			i++;
-			j = 1;
-		}
-	}
-	return (str);
-}
-
-char	**ft_isl(char *str, char **str, int k)
-{
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (i < (k * 3) - 4 && j < (k * 3) - 1)
-	{
-		if (str[i][j] == '.' && str[i + 1][j] == '.' && str[i + 2][j] == '.' &&
-			str[i + 2][j + 1] == '.')
-		{
-			str[i][j] = '#';
-			str[i + 1][j] = '#';
-			str[i + 2][j] = '#';
-			str[i + 2][j + 1] = '#';
-			return (str);
-		}
-		else
-		{
-			j++;
-		}
-		if (k == (k * 3) - 2)
-		{
-			i++;
-			j = 0;
-		}
-	}
-	return (str);
-}
-
-char	**ft_irsl(char *str, char **str, int k)
+char	**ft_rsl(char *str1, char **str2, int k)
 {
 	int i;
 	int j;
@@ -145,14 +52,107 @@ char	**ft_irsl(char *str, char **str, int k)
 	j = 0;
 	while (i < (k * 3) - 2 && j < (k * 3) - 3)
 	{
-		if (str[i][j] == '.' && str[i][j + 1] == '.' && str[i][j + 2] == '.' &&
-			str[i + 1][j + 2] == '.')
+		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i][j + 2] == '.' &&
+			str2[i + 1][j] == '.')
 		{
-			str[i][j] = '#';
-			str[i][j + 1] = '#';
-			str[i][j + 2] = '#';
-			str[i + 1][j + 2] = '#';
-			return (str);
+			str2[i][j] = '#';
+			str2[i][j + 1] = '#';
+			str2[i][j + 2] = '#';
+			str2[i + 1][j] = '#';
+			return (str2);
+		}
+		else
+		{
+			j++;
+		}
+		if (j == (k * 3) - 4)
+		{
+			i++;
+			j = 0;
+		}
+	}
+	return (str2);
+}
+
+char	**ft_ill(char *str1, char **str2, int k)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 1;
+	while (i < (k * 3) - 3 && j < (k * 3) - 2)
+	{
+		if (str2[i][j] == '.' && str2[i + 1][j] == '.'
+			&& str2[i + 2][j] == '.' && str2[i + 2][j - 1] == '.')
+		{
+			str2[i][j] = '#';
+			str2[i + 1][j] = '#';
+			str2[i + 2][j] = '#';
+			str2[i + 2][j - 1] = '#';
+			return (str2);
+		}
+		else
+		{
+			j++;
+		}
+		if (j == (k * 3) - 3)
+		{
+			i++;
+			j = 1;
+		}
+	}
+	return (str2);
+}
+
+char	**ft_isl(char *str1, char **str2, int k)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < (k * 3) - 4 && j < (k * 3) - 1)
+	{
+		if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 2][j] == '.' &&
+			str2[i + 2][j + 1] == '.')
+		{
+			str2[i][j] = '#';
+			str2[i + 1][j] = '#';
+			str2[i + 2][j] = '#';
+			str2[i + 2][j + 1] = '#';
+			return (str2);
+		}
+		else
+		{
+			j++;
+		}
+		if (j == (k * 3) - 2)
+		{
+			i++;
+			j = 0;
+		}
+	}
+	return (str2);
+}
+
+char	**ft_irsl(char *str1, char **str2, int k)
+{
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	while (i < (k * 3) - 2 && j < (k * 3) - 3)
+	{
+		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i][j + 2] == '.' &&
+			str2[i + 1][j + 2] == '.')
+		{
+			str2[i][j] = '#';
+			str2[i][j + 1] = '#';
+			str2[i][j + 2] = '#';
+			str2[i + 1][j + 2] = '#';
+			return (str2);
 		}
 		else
 		{
@@ -164,5 +164,5 @@ char	**ft_irsl(char *str, char **str, int k)
 			j = 0;
 		}
 	}
-	return (str);
+	return (str2);
 }

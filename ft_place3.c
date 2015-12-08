@@ -6,14 +6,14 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 18:42:03 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/07 18:42:03 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/08 14:43:00 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "libft.h"
+#include "header.h"
 
-char	**ft_irll(char *str, char **str, int k)
+char	**ft_irll(char *str1, char **str2, int k)
 {
 	int i;
  	int j;
@@ -22,29 +22,29 @@ char	**ft_irll(char *str, char **str, int k)
 	j = 0;
 	while (i < (k * 3) - 3 && j < (k * 3) - 2)
 	{
-		if (str[i][j] == '.' && str[i][j + 1] == '.' && str[i + 1][j + 1] == '.'
-			&& str[i + 2][j + 2] == '.')
+		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j + 1] == '.'
+			&& str2[i + 2][j + 2] == '.')
 		{
-			str[i][j] = '#';
-			str[i][j + 1] = '#';
-			str[i + 1][j + 1] = '#';
-			str[i + 2][j + 2] = '#';
-			return (str);
+			str2[i][j] = '#';
+			str2[i][j + 1] = '#';
+			str2[i + 1][j + 1] = '#';
+			str2[i + 2][j + 2] = '#';
+			return (str2);
 		}
 		else
 		{
 			j++;
 		}
-		if (j = (k * 3) - 3)
+		if (j == (k * 3) - 3)
 		{
 			i++;
 			j = 0;
 		}
 	}
-	return (str);
+	return (str2);
 }
 
-char	**ft_lt(char *str, char **str, int k)
+char	**ft_lt(char *str1, char **str2, int k)
 {
 	int i;
 	int j;
@@ -53,14 +53,14 @@ char	**ft_lt(char *str, char **str, int k)
 	j = 1;
 	while (i < (k * 3) - 3 && j < (k * 3) - 2)
 	{
-		if (str[i][j] == '.' && str[i + 1][j - 1] == '.' && str[i + 1][j] == '.'
-			&& str[i + 2][j] == '.')
+		if (str2[i][j] == '.' && str2[i + 1][j - 1] == '.' && str2[i + 1][j] == '.'
+			&& str2[i + 2][j] == '.')
 		{
-			str[i][j] = '#';
-			str[i + 1][j - 1] = '#';
-			str[i + 1][j] = '#';
-			str[i + 2][j] = '#';
-			return (str);
+			str2[i][j] = '#';
+			str2[i + 1][j - 1] = '#';
+			str2[i + 1][j] = '#';
+			str2[i + 2][j] = '#';
+			return (str2);
 		}
 		else
 		{
@@ -72,10 +72,10 @@ char	**ft_lt(char *str, char **str, int k)
 			j = 1;
 		}
 	}
-	return (str);
+	return (str2);
 }
 
-char	**ft_rit(char *str, char **str, int k)
+char	**ft_rit(char *str1, char **str2, int k)
 {
 	int i;
 	int j;
@@ -84,29 +84,29 @@ char	**ft_rit(char *str, char **str, int k)
 	j = 1;
 	while (i < (k * 3) - 3 && j < (k * 3) - 2)
 	{
-		if (str[i][j] == '.' && str[i + 1][j - 1] == '.'
-			&& str[i + 1][j] == '.' && str[i + 2][j] == '.')
+		if (str2[i][j] == '.' && str2[i + 1][j - 1] == '.'
+			&& str2[i + 1][j] == '.' && str2[i + 2][j] == '.')
 		{
-			str[i][j] = '#';
-			str[i + 1][j - 1] = '#';
-			str[i + 1][j] = '#';
-			str[i + 2][j] = '#';
-			return (str);
+			str2[i][j] = '#';
+			str2[i + 1][j - 1] = '#';
+			str2[i + 1][j] = '#';
+			str2[i + 2][j] = '#';
+			return (str2);
 		}
 		else
 		{
 			j++;
 		}
-		if (j = (k * 3) - 3)
+		if (j == (k * 3) - 3)
 		{
 			i++;
 			j = 1;
 		}
 	}
-	return (str);
+	return (str2);
 }
 
-char	**ft_t(char *str, char **str, int k)
+char	**ft_t(char *str1, char **str2, int k)
 {
 	int i;
 	int j;
@@ -115,29 +115,29 @@ char	**ft_t(char *str, char **str, int k)
 	j = 0;
 	while (i < (k * 3) - 2 && j < (k * 3) - 3)
 	{
-		if (str[i][j] == '.' && str[i][j + 1] == '.' && str[i][j + 3] == '.' &&
-			str[i + 1][j + 1] == '.')
+		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i][j + 3] == '.' &&
+			str2[i + 1][j + 1] == '.')
 		{
-			str[i][j] = '#';
-			str[i][j + 1] = '#';
-			str[i][j + 3] = '#';
-			str[i + 1][j + 1] = '#';
-			return (str);
+			str2[i][j] = '#';
+			str2[i][j + 1] = '#';
+			str2[i][j + 3] = '#';
+			str2[i + 1][j + 1] = '#';
+			return (str2);
 		}
 		else
 		{
 			j++;
 		}
-		if (k == (k * 3) - 4)
+		if (j == (k * 3) - 4)
 		{
 			i++;
 			j = 0;
 		}
 	}
-	return (str);
+	return (str2);
 }
 
-char	**ft_rt(char *str, char **str, int k)
+char	**ft_rt(char *str1, char **str2, int k)
 {
 	int i;
 	int j;
@@ -146,14 +146,14 @@ char	**ft_rt(char *str, char **str, int k)
 	j = 1;
 	while (i < (k * 3) - 2 && j < (k * 3) - 3)
 	{
-		if (str[i][j] == '.' && str[i + 1][j - 1] == '.' && str[i + 1][j] == '.' &&
-			str[i + 1][j + 1] == '.')
+		if (str2[i][j] == '.' && str2[i + 1][j - 1] == '.' && str2[i + 1][j] == '.'
+			&& str2[i + 1][j + 1] == '.')
 		{
-			str[i][j] = '#';
-			str[i + 1][j - 1] = '#';
-			str[i + 1][j] = '#';
-			str[i + 1][j + 1] = '#';
-			return (str);
+			str2[i][j] = '#';
+			str2[i + 1][j - 1] = '#';
+			str2[i + 1][j] = '#';
+			str2[i + 1][j + 1] = '#';
+			return (str2);
 		}
 		else
 		{
@@ -165,5 +165,5 @@ char	**ft_rt(char *str, char **str, int k)
 			j = 1;
 		}
 	}
-	return (str);
+	return (str2);
 }

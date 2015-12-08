@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 18:35:23 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/05 20:31:57 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/07 16:48:00 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ char **ft_tab_init(int i)
 		return (NULL);
 	while (j != i * 3)
 	{
-		if (!(str[j] = (char *)malloc(sizeof(char) * i * 15 + 1)))
+		if (!(str[j] = (char *)malloc(sizeof(char) * i * 3 + 1)))
 			return (NULL);
-		ft_memset(str[j], '.', i * 15);
-		str[j][16] = '\0';
+		ft_memset(str[j], '.', i * 3);
+		str[j][i * 3 + 1] = '\0';
 		j++;
 	}
 	return (str);

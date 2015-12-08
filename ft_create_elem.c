@@ -9,7 +9,7 @@ t_list	*ft_create_elem(char *elem)
 		return (NULL);
 	list->next = NULL;
 	list->str = ft_strdup(elem);
-	list->prev = list;
+//	list->prev = list;
 	return (list);
 /*
 	if (!(list = (t_list *)malloc(sizeof(t_list))))

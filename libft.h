@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/28 13:40:25 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/07 18:48:23 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/08 16:26:52 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,40 +33,35 @@ typedef struct	s_file
 typedef struct	s_list
 {
 	char			*str;
-	struct s_list	*prev;
 	struct s_list	*next;
 }				t_list;
-typedef	char **(t_s_place)(char *, char **, int);
+typedef char	**(t_s_place)(char *,char **, int);
 
 typedef struct	s_place
 {
-	char *str;
-	t_s_place func;
-	int i;
+	char *s;
+	t_s_place *func;
 }				t_place;
-
-t_place gl_placetab[] = {
-	{"su", &ft_su, i}, \
-	{"sd", &ft_sd, i}, \
-	{"square", &ft_square i}, \
-	{"ll", &ft_ll, i}, \
-	{"rll", &ft_rll, i}, \
-	{"sl", &ft_sl, i}, \
-	{"rsl", &ft_rsl, i}, \
-	{"ill", &ft_ill, i}, \
-	{"isl", &ft_isl, i}, \
-	{"irsl", &ft_irsl, i}, \
-	{"irll", &ft_irll, i},   \
-	{"t", &ft_t, i}, \
-	{"rt", &ft_rt, i}, \
-	{"lt", &ft_lt, i},   \
-	{"rit", &ft_rit, i}, \
-	{"s", &ft_s, i}, \
-	{"z", &ft_z, i}, \
-	{"ups", &ft_ups, i},\
-	{"upz", &ft_upz, i}
-};
-
+char    **ft_call_func(char *str, char **tab, int i, int j);
+char    **ft_su(char *str1, char **str2, int k);
+char    **ft_sd(char *str1, char **str2, int k);
+char    **ft_square(char *str1, char **str2, int k);
+char    **ft_ll(char *str1, char **str2, int k);
+char    **ft_rll(char *str1, char **str2, int k);
+char    **ft_sl(char *str1, char **str2, int k);
+char    **ft_rsl(char *str1, char **str2, int k);
+char    **ft_ill(char *str1, char **str2, int k);
+char    **ft_isl(char *str1, char **str2, int k);
+char    **ft_irsl(char *str1, char **str2, int k);
+char    **ft_irll(char *str1, char **str2, int k);
+char    **ft_lt(char *str1, char **str2, int k);
+char    **ft_rit(char *str1, char **str2, int k);
+char    **ft_t(char *str1, char **str2, int k);
+char    **ft_rt(char *str1, char **str2, int k);
+char    **ft_s(char *str1, char **str2, int k);
+char    **ft_z(char *str1, char **str2, int k);
+char    **ft_ups(char *str1, char **str2, int k);
+char    **ft_upz(char *str1, char **str2, int k);
 int     ft_strlen(char *str);
 void    ft_putchar(char c);
 void    ft_putstr(char *str);
@@ -89,7 +84,7 @@ char	*ft_strcpy(char *dest, char *src);
 void    ft_list_push_back(t_list **begin_list, char *newelem);
 char    *ft_strjoin(char *s1, char *s2);
 int     ft_list_size(t_list **begin_list);
-void    ft_resolve(t_list **begin_list);
+void    ft_resolve(t_list **begin_list, int k);
 char **ft_tab_init(int i);
 void    *ft_memset(void *b, int c, size_t n);
 #endif
