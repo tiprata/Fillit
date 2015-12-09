@@ -1,35 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tab_init.c                                      :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/12/05 18:35:23 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/09 22:08:44 by tiprata          ###   ########.fr       */
+/*   Created: 2015/11/23 19:41:22 by tiprata           #+#    #+#             */
+/*   Updated: 2015/12/09 22:03:09 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-char **ft_tab_init(int i)
+void	ft_putendl(char *s)
 {
-	int j;
-	char **str;
-
-	j = 0;
-	if (!(str = (char **)malloc(sizeof(char *) * (i * 3) + 1)))
-		return (NULL);
-	while (j < i * 3)
-	{
-		//if (!(str[j] = (char *)malloc(sizeof(char) * (i * 3) + 1)))
-		//	return (NULL);
-		/*
-		ft_memset(str[j], '.', i * 3);
-		str[j][i * 3 + 1] = '\0';
-		*/
-		str[j] = ft_strdup("...............");
-		j++;
-	}
-	return (str);
+	write(1, s, ft_strlen(s));
+	write(1, "\n", 1);
 }

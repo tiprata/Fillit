@@ -6,7 +6,7 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/05 18:04:43 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/09 17:43:15 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/09 22:09:24 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,28 +39,26 @@ char	**ft_call_func(char **tab, int i, int j)
 	tab = gl_placetab[j].func(tab, i);
 	return (tab);
 }
-void	ft_resolve(t_list **begin_list, int k, int sizelist)
+void	ft_resolve(t_list *begin_list, int k, int sizelist)
 {
 	t_list *list;
 	char **str;
 	int j;
 
 	j = 0;
-	list = *begin_list;
+	list = begin_list;
 	str = ft_tab_init(sizelist);
 	list = list->next;
-	while (list->next)
+/*	while (list)
 	{
 		ft_putstr(list->str);
-		ft_putchar('\n');
+		ft_putstr("\n__________\n");
 		list = list->next;
-	}
-	while (list->next)
+		}*/
+	while (list)
 	{
 		while (ft_strcmp(gl_placetab[j].s, list->str) != 0 && j < 19)
-		{
 			j++;
-		}
 //		ft_putchar('\n');
 //		ft_putstr(list->str);
 //		ft_putchar('\n');
@@ -68,10 +66,14 @@ void	ft_resolve(t_list **begin_list, int k, int sizelist)
 		j = 0;
 		list = list->next;
 	}
-/*	ft_putstr(str[0]);
+	ft_putstr(str[0]);
+	ft_putchar('\n');
 	ft_putstr(str[1]);
+		ft_putchar('\n');
 	ft_putstr(str[2]);
+		ft_putchar('\n');
 	ft_putstr(str[3]);
+		ft_putchar('\n');
 	ft_putstr(str[4]);
-	ft_putstr(str[5]);*/
+		ft_putchar('\n');
 }
