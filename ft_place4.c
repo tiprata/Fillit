@@ -6,14 +6,14 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 18:42:10 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/08 14:36:41 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/09 17:38:26 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "header.h"
+#include "libft.h"
 
-char	**ft_s(char *str1, char **str2, int k)
+char	**ft_s(char **str2, int k)
 {
 	int i;
 	int j;
@@ -44,7 +44,7 @@ char	**ft_s(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_z(char *str1, char **str2, int k)
+char	**ft_z(char **str2, int k)
 {
 	int i;
 	int j;
@@ -75,7 +75,7 @@ char	**ft_z(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_ups(char *str1, char **str2, int k)
+char	**ft_ups(char **str2, int k)
 {
 	int i;
 	int j;
@@ -106,7 +106,7 @@ char	**ft_ups(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_upz(char *str1, char **str2, int k)
+char	**ft_upz(char **str2, int k)
 {
 	int i;
 	int j;

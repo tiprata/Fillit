@@ -6,14 +6,14 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 18:42:03 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/08 14:43:00 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/09 17:38:18 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "header.h"
+#include "libft.h"
 
-char	**ft_irll(char *str1, char **str2, int k)
+char	**ft_irll(char **str2, int k)
 {
 	int i;
  	int j;
@@ -44,7 +44,7 @@ char	**ft_irll(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_lt(char *str1, char **str2, int k)
+char	**ft_lt(char **str2, int k)
 {
 	int i;
 	int j;
@@ -75,7 +75,7 @@ char	**ft_lt(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_rit(char *str1, char **str2, int k)
+char	**ft_rit(char **str2, int k)
 {
 	int i;
 	int j;
@@ -106,7 +106,7 @@ char	**ft_rit(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_t(char *str1, char **str2, int k)
+char	**ft_t(char **str2, int k)
 {
 	int i;
 	int j;
@@ -137,7 +137,7 @@ char	**ft_t(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_rt(char *str1, char **str2, int k)
+char	**ft_rt(char **str2, int k)
 {
 	int i;
 	int j;

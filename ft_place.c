@@ -6,13 +6,13 @@
 /*   By: tiprata <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/07 14:12:43 by tiprata           #+#    #+#             */
-/*   Updated: 2015/12/08 14:48:58 by tiprata          ###   ########.fr       */
+/*   Updated: 2015/12/09 17:38:02 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "header.h"
+#include "libft.h"
 
-char	**ft_su(char *str1, char **str2, int k)
+char	**ft_su(char **str2, int k)
 {
 	int i;
 	int j;
@@ -43,7 +43,7 @@ char	**ft_su(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_sd(char *str1, char **str2, int k)
+char	**ft_sd(char **str2, int k)
 {
 	int i;
 	int j;
@@ -74,7 +74,7 @@ char	**ft_sd(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_square(char *str1, char **str2, int k)
+char	**ft_square(char **str2, int k)
 {
 	int i;
 	int j;
@@ -105,7 +105,7 @@ char	**ft_square(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_ll(char *str1, char **str2, int k)
+char	**ft_ll(char **str2, int k)
 {
 	int i;
 	int j;
@@ -136,7 +136,7 @@ char	**ft_ll(char *str1, char **str2, int k)
 	return (str2);
 }
 
-char	**ft_rll(char *str1, char **str2, int k)
+char	**ft_rll(char **str2, int k)
 {
 	int i;
 	int j;
