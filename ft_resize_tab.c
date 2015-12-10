@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+`/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_resize_tab.c                                    :+:      :+:    :+:   */
@@ -12,11 +12,22 @@
 
 #include "libft.h"
 
-char	**ft_resize_tab(char **str)
+char **ft_transfotab(int x, int y, char **str)
+{
+  char **tab;
+  int i;
+  int j;
+
+  free(str);
+  return (tab);
+}
+
+char	**ft_resize_tab(char **str, int x)
 {
   int i;
   int j;
-  int	j
+  int y;
+    
     j = 0;
   i = 0;
   while(str[i])
@@ -25,11 +36,14 @@ char	**ft_resize_tab(char **str)
       if (str[i][j] == '.')
 	{
 	  while (j && str[i][j] == '.' && str[i])
-	    {
 	      i++;
-	    }
+	  if (i == x)
+	      y++;
+	  else
+	    return (transfortab(i, j);
+	  j--;
+	  i--;
 	}
-      
       i++;
     }
 }

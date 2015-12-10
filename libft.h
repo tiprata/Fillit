@@ -45,6 +45,7 @@ typedef struct	s_place
 }				t_place;
 extern const t_place gl_placetab[19];
 
+char **ft_resize_tqb(char **str, int x);
 void	ft_putendl(char *s);
 char	**ft_call_func(char **tab, int i, int j, char a);
 char	**ft_su(char **str2, int k, char a);
