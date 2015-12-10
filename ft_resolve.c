@@ -44,7 +44,9 @@ void	ft_resolve(t_list *begin_list, int j, int sizelist)
   t_list *list;
   char **str;
   int i;
-  
+  int x;
+
+  x = 0;
   j = sizelist;
   i = 0;
   list = begin_list;
@@ -63,15 +65,11 @@ void	ft_resolve(t_list *begin_list, int j, int sizelist)
       str = ft_call_func(str, i, sizelist, list->a);
       i = 0;
       list = list->next;
+    }
+    str = ft_resize_tab(str, sizelist * 3);
+    while (str[x])
+      {
+	ft_putendl(str[x]);
+	x++;
       }
-  ft_putstr(str[0]);
-  ft_putchar('\n');
-  ft_putstr(str[1]);
-  ft_putchar('\n');
-  ft_putstr(str[2]);
-  ft_putchar('\n');
-  ft_putstr(str[3]);
-  ft_putchar('\n');
-  ft_putstr(str[4]);
-  ft_putchar('\n');
 }
