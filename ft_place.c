@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	**ft_su(char **str2, int k)
+char	**ft_su(char **str2, int k, char a)
 {
 	int i;
 	int j;
@@ -24,10 +24,10 @@ char	**ft_su(char **str2, int k)
 		if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 2][j] == '.' &&
 			str2[i + 3][j] == '.')
 		{
-			str2[i][j] = '#';
-			str2[i + 1][j] = '#';
-			str2[i + 2][j] = '#';
-			str2[i + 3][j] = '#';
+			str2[i][j] = a;
+			str2[i + 1][j] = a;
+			str2[i + 2][j] = a;
+			str2[i + 3][j] = a;
 			return (str2);
 		}
 		else
@@ -43,7 +43,7 @@ char	**ft_su(char **str2, int k)
 	return (str2);
 }
 
-char	**ft_sd(char **str2, int k)
+char	**ft_sd(char **str2, int k, char a)
 {
 	int i;
 	int j;
@@ -55,10 +55,10 @@ char	**ft_sd(char **str2, int k)
 		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i][j + 2] == '.' &&
 			str2[i][j + 3] == '.')
 		{
-			str2[i][j] = '#';
-			str2[i][j + 1] = '#';
-			str2[i][j + 2] = '#';
-			str2[i][j + 3] = '#';
+			str2[i][j] = a;
+			str2[i][j + 1] = a;
+			str2[i][j + 2] = a;
+			str2[i][j + 3] = a;
 			return (str2);
 		}
 		else
@@ -74,7 +74,7 @@ char	**ft_sd(char **str2, int k)
 	return (str2);
 }
 
-char	**ft_square(char **str2, int k)
+char	**ft_square(char **str2, int k, char a)
 {
 	int i;
 	int j;
@@ -86,10 +86,10 @@ char	**ft_square(char **str2, int k)
 		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j] == '.' &&
 			str2[i + 1][j + 1] == '.')
 		{
-			str2[i][j] = '#';
-			str2[i][j + 1] = '#';
-			str2[i + 1][j] = '#';
-			str2[i + 1][j + 1] = '#';
+			str2[i][j] = a;
+			str2[i][j + 1] = a;
+			str2[i + 1][j] = a;
+			str2[i + 1][j + 1] = a;
 			return (str2);
 		}
 		else
@@ -105,7 +105,7 @@ char	**ft_square(char **str2, int k)
 	return (str2);
 }
 
-char	**ft_ll(char **str2, int k)
+char	**ft_ll(char **str2, int k, char a)
 {
 	int i;
 	int j;
@@ -117,10 +117,10 @@ char	**ft_ll(char **str2, int k)
 		if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 2][j] == '.' &&
 			str2[i + 2][j + 1] == '.')
 		{
-			str2[i][j] = '#';
-			str2[i + 1][j] = '#';
-			str2[i + 2][j] = '#';
-			str2[i + 2][j + 1] = '#';
+			str2[i][j] = a;
+			str2[i + 1][j] = a;
+			str2[i + 2][j] = a;
+			str2[i + 2][j + 1] = a;
 			return (str2);
 		}
 		else
@@ -136,7 +136,7 @@ char	**ft_ll(char **str2, int k)
 	return (str2);
 }
 
-char	**ft_rll(char **str2, int k)
+char	**ft_rll(char **str2, int k, char a)
 {
 	int i;
 	int j;
@@ -148,10 +148,10 @@ char	**ft_rll(char **str2, int k)
 		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j] == '.' &&
 			str2[i + 2][j] == '.')
 		{
-			str2[i][j] = '#';
-			str2[i][j + 1] = '#';
-			str2[i + 1][j] = '#';
-			str2[i + 2][j] = '#';
+			str2[i][j] = a;
+			str2[i][j + 1] = a;
+			str2[i + 1][j] = a;
+			str2[i + 2][j] = a;
 			return (str2);
 		}
 		else

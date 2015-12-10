@@ -22,20 +22,22 @@
 
 typedef struct	s_file
 {
-	int		count;
-	int		err;
-	int		fd;
-	int		ret;
-	char	*stock;
-	int		tetrinb;
+  int		count;
+  int		err;
+  int		fd;
+  int		ret;
+  char	*stock;
+  int		tetrinb;
+  int		errcheck;
 }				t_file;
 
 typedef struct	s_list
 {
-	char			*str;
-	struct s_list	*next;
+  char	      	*str;
+  char		a;
+  struct s_list	*next;
 }				t_list;
-typedef char	**(t_s_place)(char **, int);
+typedef char	**(t_s_place)(char **, int, char);
 typedef struct	s_place
 {
 	char *s;
@@ -44,26 +46,26 @@ typedef struct	s_place
 extern const t_place gl_placetab[19];
 
 void	ft_putendl(char *s);
-char	**ft_call_func(char **tab, int i, int j);
-char	**ft_su(char **str2, int k);
-char	**ft_sd(char **str2, int k);
-char	**ft_square(char **str2, int k);
-char	**ft_ll(char **str2, int k);
-char	**ft_rll(char **str2, int k);
-char	**ft_sl(char **str2, int k);
-char	**ft_rsl(char **str2, int k);
-char	**ft_ill(char **str2, int k);
-char	**ft_isl(char **str2, int k);
-char	**ft_irsl(char **str2, int k);
-char	**ft_irll(char **str2, int k);
-char	**ft_lt(char **str2, int k);
-char	**ft_rit(char **str2, int k);
-char	**ft_t(char **str2, int k);
-char	**ft_rt(char **str2, int k);
-char	**ft_s(char **str2, int k);
-char	**ft_z(char **str2, int k);
-char	**ft_ups(char **str2, int k);
-char	**ft_upz(char **str2, int k);
+char	**ft_call_func(char **tab, int i, int j, char a);
+char	**ft_su(char **str2, int k, char a);
+char	**ft_sd(char **str2, int k, char a);
+char	**ft_square(char **str2, int k, char a);
+char	**ft_ll(char **str2, int k, char a);
+char	**ft_rll(char **str2, int k, char a);
+char	**ft_sl(char **str2, int k, char a);
+char	**ft_rsl(char **str2, int k, char a);
+char	**ft_ill(char **str2, int k, char a);
+char	**ft_isl(char **str2, int k, char a);
+char	**ft_irsl(char **str2, int k, char a);
+char	**ft_irll(char **str2, int k, char a);
+char	**ft_lt(char **str2, int k, char a);
+char	**ft_rit(char **str2, int k, char a);
+char	**ft_t(char **str2, int k, char a);
+char	**ft_rt(char **str2, int k, char a);
+char	**ft_s(char **str2, int k, char a);
+char	**ft_z(char **str2, int k, char a);
+char	**ft_ups(char **str2, int k, char a);
+char	**ft_upz(char **str2, int k, char a);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strlen(char *str);
 void	ft_putchar(char c);

@@ -14,22 +14,22 @@
 
 char **ft_tab_init(int i)
 {
-	int j;
-	char **str;
-
-	j = 0;
-	if (!(str = (char **)malloc(sizeof(char *) * (i * 3) + 1)))
-		return (NULL);
-	while (j < i * 3)
-	{
-		//if (!(str[j] = (char *)malloc(sizeof(char) * (i * 3) + 1)))
-		//	return (NULL);
-		/*
-		ft_memset(str[j], '.', i * 3);
-		str[j][i * 3 + 1] = '\0';
-		*/
-		str[j] = ft_strdup("...............");
-		j++;
-	}
-	return (str);
+  int j;
+  char **str;
+  
+  j = 0;
+  if (!(str = (char **)malloc(sizeof(char *) * (i * 3) + 1)))
+    return (NULL);
+  while (j < i * 3)
+    {
+      if (!(str[j] = (char *)malloc(sizeof(char) * (i * 3) + 1)))
+	return (NULL);
+      
+      ft_memset(str[j], '.', i * 3);
+      str[j][i * 3 + 1] = '\0';
+      
+      //str[j] = ft_strdup("...............");
+      j++;
+    }
+  return (str);
 }

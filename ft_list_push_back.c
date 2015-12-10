@@ -16,12 +16,17 @@ void	ft_list_push_back(t_list **begin_list, char *newelem)
 {
 	t_list *node;
 	t_list *tmp;
-
-	node = ft_create_elem(newelem);
+	if (!(node = (t_list *)malloc(sizeof(t_list))))
+	  node = NULL;
+	node->next = NULL;
+	node->str = ft_strdup(newelem);
+	node->a = 65 + ft_list_size(begin_list);
+	ft_putchar('\n');
 	if (*begin_list == NULL)
 		*begin_list = node;
 	else
 	{
+	  
 		tmp = *begin_list;
 		while (tmp->next)
 			tmp = tmp->next;

@@ -31,6 +31,11 @@ t_file		ft_fillit_read_open(char **av)
 		ft_detect_forms(buf, &list);
 		file.stock = ft_dupstrcat(file.stock, buf);
 	}
+	if (ft_error_check(file) == -1)
+	  {
+	    file.errcheck = -1;
+	    return (file);
+	  }
 	afflist = list;
 	sizelist = ft_list_size(&list);
 	ft_putstr("\nLa, on affiche depuis fillit_read_open\n");

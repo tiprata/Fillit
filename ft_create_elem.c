@@ -9,6 +9,7 @@ t_list	*ft_create_elem(char *elem)
 		return (NULL);
 	list->next = NULL;
 	list->str = ft_strdup(elem);
+	list->a = 65;
 //	list->prev = list;
 	return (list);
 /*
