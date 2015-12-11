@@ -45,8 +45,9 @@ typedef struct	s_place
 }				t_place;
 extern const t_place gl_placetab[19];
 
-char **ft_transfotab(int x, int z, char **str, int y);
-char **ft_resize_tqb(char **str, int x);
+void	ft_resolve(t_list *begin_list, int tetrinb);
+char **ft_transfotab(int x, char **str, int y);
+char **ft_resize_tab(char **str, int x);
 void	ft_putendl(char *s);
 char	**ft_call_func(char **tab, int i, int j, char a);
 char	**ft_su(char **str2, int k, char a);
@@ -91,7 +92,6 @@ char	*ft_strcpy(char *dest, char *src);
 void	ft_list_push_back(t_list **begin_list, char *newelem);
 char	*ft_strjoin(char *s1, char *s2);
 int		ft_list_size(t_list **begin_list);
-void	ft_resolve(t_list *begin_list, int j, int tetrinb);
 char	**ft_tab_init(int i);
 void	*ft_memset(void *b, int c, size_t n);
 #endif
