@@ -12,12 +12,20 @@
 
 #include "libft.h"
 
-char **ft_transfotab(int x, int y, char **str)
+char **ft_transfotab(int x, int z, char **str, int y)
 {
   char **tab;
   int i;
   int j;
 
+
+  if (!(tab = (char **)malloc(sizeof(char *) * x)))
+    return (NULL);
+  while (i <= y)
+    {
+      if (!(tab[i] = (char *)malloc(sizeof(char) * 
+      while (tab[i][j])
+    }
   free(str);
   return (tab);
 }
@@ -28,7 +36,7 @@ char	**ft_resize_tab(char **str, int x)
   int j;
   int y;
     
-    j = 0;
+  j = 0;
   i = 0;
   while(str[i])
     {
@@ -40,7 +48,7 @@ char	**ft_resize_tab(char **str, int x)
 	  if (i == x)
 	      y++;
 	  else
-	    return (transfortab(i, j);
+	    return (transfortab(i, j, y);
 	  j--;
 	  i--;
 	}
