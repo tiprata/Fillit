@@ -107,62 +107,62 @@ char	**ft_square(char **str2, int k, char a)
 
 char	**ft_ll(char **str2, int k, char a)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (i < (k * 3) - 4 && j < (k * 3) - 1)
+  int i;
+  int j;
+  
+  i = 0;
+  j = 0;
+  while (i < (k * 3) - 4 && j < (k * 3) - 1)
+    {
+      if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 2][j] == '.' &&
+	  str2[i + 2][j + 1] == '.')
 	{
-		if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 2][j] == '.' &&
-			str2[i + 2][j + 1] == '.')
-		{
-			str2[i][j] = a;
-			str2[i + 1][j] = a;
-			str2[i + 2][j] = a;
-			str2[i + 2][j + 1] = a;
-			return (str2);
-		}
-		else
-		{
-			j++;
-		}
-		if (j == (k * 3) - 2)
-		{
-			i++;
-			j = 0;
-		}
+	  str2[i][j] = a;
+	  str2[i + 1][j] = a;
+	  str2[i + 2][j] = a;
+	  str2[i + 2][j + 1] = a;
+	  return (str2);
 	}
-	return (str2);
+      else
+	{
+	  j++;
+	}
+      if (j == (k * 3) - 2)
+	{
+	  i++;
+	  j = 0;
+	}
+    }
+  return (str2);
 }
 
 char	**ft_rll(char **str2, int k, char a)
 {
-	int i;
-	int j;
-
-	i = 0;
-	j = 0;
-	while (i < (k * 3) - 4 && j < (k * 3) - 1)
+  int i;
+  int j;
+  
+  i = 0;
+  j = 0;
+  while (i < (k * 3) - 4 && j < (k * 3) - 1)
+    {
+      if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j] == '.' &&
+	  str2[i + 2][j] == '.')
 	{
-		if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j] == '.' &&
-			str2[i + 2][j] == '.')
-		{
-			str2[i][j] = a;
-			str2[i][j + 1] = a;
-			str2[i + 1][j] = a;
-			str2[i + 2][j] = a;
-			return (str2);
-		}
-		else
-		{
-			j++;
-		}
-		if (j == (k * 3) - 2)
-		{
-			i++;
-			j = 0;
-		}
+	  str2[i][j] = a;
+	  str2[i][j + 1] = a;
+	  str2[i + 1][j] = a;
+	  str2[i + 2][j] = a;
+	  return (str2);
 	}
-	return (str2);
+      else
+	{
+	  j++;
+	}
+      if (j == (k * 3) - 2)
+	{
+	  i++;
+	  j = 0;
+	}
+    }
+  return (str2);
 }

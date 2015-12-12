@@ -66,10 +66,10 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
 	i++;
       str = ft_call_func(str, i, tetrinb, list->a);
       i = 0;
-           list = list->next;
+      list = list->next;
     }
-       str = ft_resize_tab(str, tetrinb * 3);
-        while (str[x])
+     str = ft_resize_tab(str, tetrinb * 3);
+  while (str[x])
     {
       while (str[x][y])
 	{
@@ -80,5 +80,6 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
       ft_putchar('\n');
       y = 0;
       x++;
-      }
+    }
 }
+

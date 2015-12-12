@@ -85,6 +85,9 @@ char	**ft_resize_tab(char **str, int x)
 	  ft_putstr("Y = ");
 	  ft_putnbr(y);
 	  ft_putchar('\n');
+	  ft_putstr("J = ");
+	  ft_putnbr(j);
+	  ft_putchar('\n');
 	  return (ft_transfotab(tmp, str, y));
 	}
       w++;
