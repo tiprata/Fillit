@@ -25,9 +25,9 @@ char **ft_tab_init(int i)
       if (!(str[j] = (char *)malloc(sizeof(char) * (i * 3) + 1)))
 	return (NULL);
       ft_memset(str[j], '.', i * 3);
-      str[j][i * 3 + 1] = '\0';
+       str[j][i * 3] = '\0';
       j++;
     }
-    str[j] = NULL;
+  str[j] = NULL;
   return (str);
 }

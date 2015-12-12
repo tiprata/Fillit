@@ -45,30 +45,40 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
   char **str;
   int i;
   int x;
+  int y;
 
+  y = 0;
   x = 0;
   i = 0;
   list = begin_list;
   str = ft_tab_init(tetrinb);
   list = list->next;
+  //  ft_putstr("\n__________________OOO__________\n");
   /*	while (list)
 	{
 	ft_putstr(list->str);
 	ft_putstr("\n__________\n");
 	list = list->next;
 	}*/
-    while (list)
+  while (list)
     {
       while (ft_strcmp(gl_placetab[i].s, list->str) != 0 && i < 19)
 	i++;
       str = ft_call_func(str, i, tetrinb, list->a);
       i = 0;
-      list = list->next;
+           list = list->next;
     }
-    //str = ft_resize_tab(str, tetrinb * 3);
-    while (str[x])
-      {
-	ft_putendl(str[x]);
-	x++;
+       str = ft_resize_tab(str, tetrinb * 3);
+        while (str[x])
+    {
+      while (str[x][y])
+	{
+	  ft_putchar(str[x][y]);
+	  ft_putchar(' ');
+	  y++;
+	}
+      ft_putchar('\n');
+      y = 0;
+      x++;
       }
 }

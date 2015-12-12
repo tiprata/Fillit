@@ -20,17 +20,15 @@ char **ft_transfotab(int x, char **str, int y)
 
   i = 0;
   j = 0;
+  y--;
+	
   if (!(tab = (char **)malloc(sizeof(char *) * (x - y) + 1 )))
     return (NULL);
-  while (i <= (x - y))
+  while (i < (x - y))
     {
       if (!(tab[i] = (char *)malloc(sizeof(char) * (x - y) + 1)))
 	return (NULL);
-      /*            ft_putnbr(x - y);
-            ft_putchar('\n');
-	    ft_putnbr(j);
-	    ft_putchar('\n');*/
-      while (str[i][j] && j <= (x - y))
+      while (str[i][j] && j < (x - y))
 	{
 	  tab[i][j] = str[i][j];
 	  j++;
@@ -58,53 +56,39 @@ char	**ft_resize_tab(char **str, int x)
   j = 0;
   i = 0;
   x--;
-
-  while (str[i + 1])
-    {
-      ft_putendl(str[i]);
-      i++;
-    }
   i = 0;
+
+  while (str[y])
+    {
+      ft_putendl(str[y]);
+      y++;
+    }
+  y = 0;
   while(str[i])
     {
       tmp = i;
       i = 0;
       j = ft_strlen(str[i]) - w;
-      if (str[i][j] == '.')
+       while (str[i][j] == '.' && str[i + 1] != NULL)
+	i++;
+      while (j && str[i][j] == '.')
+	j--;
+      if (i == x && j == 0)
 	{
-	  ft_putnbr(i);
-	  while (str[i][j] == '.' && str[i + 1] != NULL)
-	      i++;
-	  while (j && str[i][j] == '.')
-	      j--;
-	  ft_putstr("\nCECI EST LE I == ");
-	  ft_putnbr(i);
+	  y++;
+	}
+      else
+	{
+	  ft_putstr("TMP = ");
+	  ft_putnbr(tmp);
 	  ft_putchar('\n');
-	  ft_putstr("\nCECI EST LE y == ");
+	  ft_putstr("Y = ");
 	  ft_putnbr(y);
 	  ft_putchar('\n');
-	  ft_putstr("\nCECI EST LE j == ");
-	  ft_putnbr(j);
-	  ft_putchar('\n');
-	  ft_putstr("\nCECI EST LE w == ");
-	  ft_putnbr(w);
-	  ft_putchar('\n');
-	  ft_putstr("\nCECI EST LE X == ");
-	  ft_putnbr(x);
-	  ft_putchar('\n');
-	  if (i == x && j == 0)
-	    {
-	      ft_putstr("taiiiin");
-	      y++;
-	    }
-	  else
-	    {
-	      ft_putstr("NUMBER\n");
-	      return (ft_transfotab(tmp, str, y));
-	    }
-	  w++;
+	  return (ft_transfotab(tmp, str, y));
 	}
-      //      i++;
-    }
+      w++;
+     }
   return (str);
 }
+
