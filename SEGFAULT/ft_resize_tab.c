@@ -49,32 +49,38 @@ char	**ft_resize_tab(char **str, int x)
   int y;
   int w;
   int tmp;
+  int tmp2 = 0;
 
   tmp = 0;
   w = 1;
   y = 0;
   j = 0;
   i = 0;
-  x--;
   i = 0;
-
-  while (str[y])
-    {
-      ft_putendl(str[y]);
-      y++;
-    }
-  y = 0;
+  x--;
+  tmp2 = -1;
+  ft_putab(str);
   while(str[i])
     {
       tmp = i;
       i = 0;
-      j = ft_strlen(str[i]) - w;
-       while (str[i][j] == '.' && str[i + 1] != NULL)
+      j = x - w;
+      while (str[i][j] == '.' && str[i + 1] != NULL)
 	i++;
       while (j && str[i][j] == '.')
 	j--;
-      if (i == x && j == 0)
+      tmp2 = j;
+      if (i == x && j == 0 && str[i][j] == '.')
 	{
+	  ft_putstr("JJJ ==== ");
+	  ft_putnbr(tmp2);
+	  ft_putchar('\n');
+	  ft_putstr("I ==== ");
+	  ft_putnbr(tmp);
+	  ft_putchar('\n');
+	  ft_putendl("ET ENFIN");
+	  ft_putchar(str[i][j]);
+	  ft_putendl("+++++");
 	  y++;
 	}
       else

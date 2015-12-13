@@ -46,12 +46,21 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
   int i;
   int x;
   int y;
+  int listsize;
 
+  listsize = ft_list_size(&begin_list);
+  tetrinb = listsize;
   y = 0;
   x = 0;
   i = 0;
   list = begin_list;
-  str = ft_tab_init(tetrinb);
+  str = ft_tab_init(listsize);
+  //  while (str[x])
+  //  {
+  //   ft_putendl(str[x]);
+  //   x++;
+  // }
+  x = 0;
   list = list->next;
   //  ft_putstr("\n__________________OOO__________\n");
   /*	while (list)
@@ -64,22 +73,12 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
     {
       while (ft_strcmp(gl_placetab[i].s, list->str) != 0 && i < 19)
 	i++;
-      str = ft_call_func(str, i, tetrinb, list->a);
+      str = ft_call_func(str, i, listsize, list->a);
       i = 0;
       list = list->next;
     }
-     str = ft_resize_tab(str, tetrinb * 3);
-  while (str[x])
-    {
-      while (str[x][y])
-	{
-	  ft_putchar(str[x][y]);
-	  ft_putchar(' ');
-	  y++;
-	}
-      ft_putchar('\n');
-      y = 0;
-      x++;
-    }
+     str = ft_resize_tab(str, listsize * 3);
+     ft_putstr("CECI EST L'AFFICHAGE FINAL <--------<\n");
+     ft_putab(str);
 }
 
