@@ -37,7 +37,7 @@ const t_place gl_placetab[] = {
 char	**ft_call_func(char **tab, int i, int j, char a)
 {
   tab = gl_placetab[i].func(tab, j, a);
-	return (tab);
+  return (tab);
 }
 void	ft_resolve(t_list *begin_list, int tetrinb)
 {
@@ -48,7 +48,7 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
   int y;
   int listsize;
 
-  listsize = ft_list_size(&begin_list);
+  listsize = ft_list_size(&begin_list) + 1;
   tetrinb = listsize;
   y = 0;
   x = 0;

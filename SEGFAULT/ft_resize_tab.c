@@ -20,7 +20,6 @@ char **ft_transfotab(int x, char **str, int y)
 
   i = 0;
   j = 0;
-  y--;
 	
   if (!(tab = (char **)malloc(sizeof(char *) * (x - y) + 1 )))
     return (NULL);
@@ -57,7 +56,7 @@ char	**ft_resize_tab(char **str, int x)
   j = 0;
   i = 0;
   i = 0;
-  x--;
+      
   tmp2 = -1;
   ft_putab(str);
   while(str[i])
@@ -65,12 +64,18 @@ char	**ft_resize_tab(char **str, int x)
       tmp = i;
       i = 0;
       j = x - w;
-      while (str[i][j] == '.' && str[i + 1] != NULL)
+      tmp2 = j;
+      while (str[i][j] == '.' && str[i + 1] != NULL && i < (x - w))
 	i++;
+      ft_putstr("YOLOKIIIII=======");
+      ft_putnbr(i);
+      ft_putchar('\n');
+      ft_putstr("YOLOKJJJJJ=======");
+      ft_putnbr(j);
+      ft_putchar('\n');
       while (j && str[i][j] == '.')
 	j--;
-      tmp2 = j;
-      if (i == x && j == 0 && str[i][j] == '.')
+      if (i == x - w && j == 0 && str[i][j] == '.')
 	{
 	  ft_putstr("JJJ ==== ");
 	  ft_putnbr(tmp2);
@@ -94,7 +99,7 @@ char	**ft_resize_tab(char **str, int x)
 	  ft_putstr("J = ");
 	  ft_putnbr(j);
 	  ft_putchar('\n');
-	  return (ft_transfotab(tmp, str, y));
+	  return (ft_transfotab(x, str, y));
 	}
       w++;
      }

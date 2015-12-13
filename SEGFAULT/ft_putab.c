@@ -16,8 +16,9 @@ void	ft_putab(char **str)
 	  ft_putchar(' ');
 	  j++;
 	}
-	ft_putchar('\n');
-	j = 0;
-	i++;
+      ft_putnbr(i);
+      ft_putchar('\n');
+      j = 0;
+      i++;
     }
 }
