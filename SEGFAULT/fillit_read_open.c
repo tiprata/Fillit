@@ -36,14 +36,12 @@ t_file		ft_fillit_read_open(char **av)
 	    return (file);
 	  }
 	afflist = list;
-	ft_putstr("\nLa, on affiche depuis fillit_read_open\n");
 	while (afflist)
 	  {
 	    ft_putstr(afflist->str);
 	    ft_putstr("\n__________\n");
 	    afflist = afflist->next;
 	  }
-	ft_putstr("La, on affiche depuis la fonction appelee dans fillit_read_open\n");
 	ft_resolve(list, file.tetrinb);
 	return (file);
 }

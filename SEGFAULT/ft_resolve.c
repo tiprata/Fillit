@@ -39,7 +39,7 @@ char	**ft_call_func(char **tab, int i, int j, char a)
   tab = gl_placetab[i].func(tab, j, a);
   return (tab);
 }
-void	ft_resolve(t_list *begin_list, int tetrinb)
+int	ft_resolve(t_list *begin_list, int tetrinb)
 {
   t_list *list;
   char **str;
@@ -55,20 +55,8 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
   i = 0;
   list = begin_list;
   str = ft_tab_init(listsize);
-  //  while (str[x])
-  //  {
-  //   ft_putendl(str[x]);
-  //   x++;
-  // }
   x = 0;
   list = list->next;
-  //  ft_putstr("\n__________________OOO__________\n");
-  /*	while (list)
-	{
-	ft_putstr(list->str);
-	ft_putstr("\n__________\n");
-	list = list->next;
-	}*/
   while (list)
     {
       while (ft_strcmp(gl_placetab[i].s, list->str) != 0 && i < 19)
@@ -77,8 +65,10 @@ void	ft_resolve(t_list *begin_list, int tetrinb)
       i = 0;
       list = list->next;
     }
-     str = ft_resize_tab(str, listsize * 3);
-     ft_putstr("CECI EST L'AFFICHAGE FINAL <--------<\n");
-     ft_putab(str);
+  
+  str = ft_resize_tab(str, listsize * 3);
+  ft_putstr("CECI EST L'AFFICHAGE FINAL <--------<\n");
+  ft_putab(str);
+  return (ft_strlen(str[0]));
 }
 

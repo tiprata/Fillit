@@ -12,11 +12,25 @@ void	ft_putab(char **str)
     {
       while (str[i][j])
 	{
-	  ft_putchar(str[i][j]);
-	  ft_putchar(' ');
+	  if (str[i][j] == '.')
+	    {
+	      ft_putstr("\x1B[31m");
+	      ft_putchar(str[i][j]);
+	      ft_putstr("\033[0m");
+	      ft_putchar(' ');
+	    }
+	  else
+	    {
+	      ft_putstr("\x1B[32m");
+	      ft_putchar(str[i][j]);
+	      ft_putstr("\033[0m");
+	      ft_putchar(' ');
+	    }
 	  j++;
 	}
+      ft_putstr("\x1B[36m");
       ft_putnbr(i);
+      ft_putstr("\033[0m");
       ft_putchar('\n');
       j = 0;
       i++;

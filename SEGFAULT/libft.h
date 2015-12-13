@@ -46,7 +46,7 @@ typedef struct	s_place
 extern const t_place gl_placetab[19];
 
 void	ft_putab(char **str);
-void	ft_resolve(t_list *begin_list, int tetrinb);
+int	ft_resolve(t_list *begin_list, int tetrinb);
 char **ft_transfotab(int x, char **str, int y);
 char **ft_resize_tab(char **str, int x);
 void	ft_putendl(char *s);
