@@ -45,6 +45,7 @@ typedef struct	s_place
 }				t_place;
 extern const t_place gl_placetab[19];
 
+int	ft_sqrt(int x);
 void	ft_putab(char **str);
 int	ft_resolve(t_list *begin_list, int tetrinb);
 char **ft_transfotab(int x, char **str, int y);
