@@ -18,16 +18,17 @@ char **ft_tab_init(int i)
   char **str;
   
   j = 0;
-  if (!(str = (char **)malloc(sizeof(char *) * (i * 3) + 1)))
+  if (!(str = (char **)malloc(sizeof(char *) * i + 1)))
     return (NULL);
-  while (j < i * 3)
+  while (j < i)
     {
-      if (!(str[j] = (char *)malloc(sizeof(char) * (i * 3) + 1)))
+      if (!(str[j] = (char *)malloc(sizeof(char) * i + 1)))
 	return (NULL);
-      ft_memset(str[j], '.', i * 3);
-       str[j][i * 3] = '\0';
+      ft_memset(str[j], '.', i);
+       str[j][i] = '\0';
       j++;
     }
   str[j] = NULL;
+  ft_putab(str);
   return (str);
 }

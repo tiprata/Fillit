@@ -48,25 +48,25 @@ int	ft_resolve(t_list *begin_list, int tetrinb)
   int y;
   int listsize;
 
-  listsize = ft_list_size(&begin_list) + 1;
+  listsize = ft_list_size(&begin_list);
   tetrinb = listsize;
   y = 0;
   x = 0;
   i = 0;
   list = begin_list;
-  str = ft_tab_init(listsize);
+  str = ft_tab_init(ft_sqrt(listsize * 4));
   x = 0;
   list = list->next;
   while (list)
     {
       while (ft_strcmp(gl_placetab[i].s, list->str) != 0 && i < 19)
 	i++;
-      str = ft_call_func(str, i, listsize, list->a);
+      str = ft_call_func(str, i, ft_sqrt(listsize * 4), list->a);
       i = 0;
       list = list->next;
     }
   
-  str = ft_resize_tab(str, listsize * 3);
+  //  str = ft_resize_tab(str, listsize * 3);
   ft_putstr("CECI EST L'AFFICHAGE FINAL <--------<\n");
   ft_putab(str);
   return (ft_strlen(str[0]));

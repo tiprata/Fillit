@@ -32,9 +32,9 @@ void    ft_putnbr(int n)
 
 void	ft_detect_forms(char *str, t_list **list)
 {
-	ft_is_t(str, list);
-	ft_is_square(str, list);
-	ft_is_stick(str, list);
-	ft_is_sharp(str, list);
-	ft_is_l(str, list);
+  ft_is_t(str, list);
+  ft_is_square(str, list);
+  ft_is_stick(str, list);
+  ft_is_sharp(str, list);
+  ft_is_l(str, list);
 }

@@ -9,14 +9,16 @@
 /*   Updated: 2015/12/14 13:59:02 by tiprata          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "libft.h"
 
 int	ft_sqrt(int x)
 {
   int left;
   int right;
-  int result;
+  double result;
   int mid;
-  
+  int reres;
+
   left = 1;
   right = x;
   if (x == 0)
@@ -32,6 +34,8 @@ int	ft_sqrt(int x)
       else
 	right = mid - 1;
     }
-  return (result);
+  if (result / 10 != 0)
+      result++;
+  reres = result;
+  return (reres);
 }
-

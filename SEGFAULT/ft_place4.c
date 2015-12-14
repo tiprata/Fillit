@@ -20,10 +20,10 @@ char	**ft_s(char **str2, int k, char a)
   
   i = 0;
   j = 1;
-  while (i < (k * 3) - 2 && j < (k * 3) - 3)
+  while (i < k - 2 && j < k - 3)
     {
       if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j - 1] == '.'
-	  && str2[i + 1][j] == '.' && j <= i)
+	  && str2[i + 1][j] == '.')
 	{
 	  str2[i][j] = a;
 	  str2[i][j + 1] = a;
@@ -35,7 +35,7 @@ char	**ft_s(char **str2, int k, char a)
 	{
 	  j++;
 	}
-      if (j == (k * 3) - 4)
+      if (j == k - 4)
 	{
 	  i++;
 	  j = 1;
@@ -51,10 +51,10 @@ char	**ft_z(char **str2, int k, char a)
   
   i = 0;
   j = 0;
-  while (i < (k * 3) - 2 && j < (k * 3) - 2)
+  while (i < k - 2 && j < k - 2)
     {
       if (str2[i][j] == '.' && str2[i][j + 1] == '.'
-	  && str2[i + 1][j + 1] == '.' && str2[i + 1][j + 2] == '.' && j <= i)
+	  && str2[i + 1][j + 1] == '.' && str2[i + 1][j + 2] == '.')
 	{
 	  str2[i][j] = a;
 	  str2[i][j + 1] = a;
@@ -66,7 +66,7 @@ char	**ft_z(char **str2, int k, char a)
 	{
 	  j++;
 	}
-      if (j == ((k * 3) - 3))
+      if (j == (k - 3))
 	{
 	  i++;
 	  j = 0;
@@ -81,13 +81,13 @@ char	**ft_ups(char **str2, int k, char a)
   int j;
   
   i = 0;
-  while (i < (k * 3) - 3)
+  while (i < k)
     {
       j = 1;
-      while (j < (k * 3) - 2)
+      while (j < k)
 	{
 	  if (str2[i][j] == '.' && str2[i + 1][j - 1] == '.' && str2[i + 1][j] == '.' &&
-	      str2[i + 2][j - 1] == '.' && j <= i)
+	      str2[i + 2][j - 1] == '.')
 	    {
 	      str2[i][j] = a;
 	      str2[i + 1][j - 1] = a;
@@ -109,10 +109,13 @@ char	**ft_upz(char **str2, int k, char a)
   
   i = 0;
   j = 0;
-  while (i < (k * 3) - 3 && j < (k * 3) - 2)
+  ft_putstr("K=======> ");
+  ft_putnbr(k);
+  ft_putchar('\n');
+  while (i < k - 3 && j < k - 1)
     {
       if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 1][j + 1] == '.' &&
-	  str2[i + 2][j + 1] == '.' && j <= i)
+	  str2[i + 2][j + 1] == '.' )
 	{
 	  str2[i][j] = a;
 	  str2[i + 1][j] = a;
@@ -124,7 +127,7 @@ char	**ft_upz(char **str2, int k, char a)
 	{
 	  j++;
 	}
-      if (j == (k * 3) - 3)
+      if (j == k - 2)
 	{
 	  i++;
 	  j = 0;
