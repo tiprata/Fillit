@@ -13,7 +13,7 @@
 
 #include "libft.h"
 
-char	**ft_s(char **str2, int k, char a)
+t_ret	ft_s(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -25,23 +25,24 @@ char	**ft_s(char **str2, int k, char a)
       j = 1;
       while (j < k - 1)
 	{
-	  if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j - 1] == '.'
-	      && str2[i + 1][j] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i][j + 1] == '.' && ret.str[i + 1][j - 1] == '.'
+	      && ret.str[i + 1][j] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i][j + 1] = a;
-	      str2[i + 1][j - 1] = a;
-	      str2[i + 1][j] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i][j + 1] = a;
+	      ret.str[i + 1][j - 1] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_z(char **str2, int k, char a)
+t_ret	ft_z(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -53,23 +54,24 @@ char	**ft_z(char **str2, int k, char a)
       j = 0;
       while (j < k - 2)
 	{
-	  if (str2[i][j] == '.' && str2[i][j + 1] == '.'
-	      && str2[i + 1][j + 1] == '.' && str2[i + 1][j + 2] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i][j + 1] == '.'
+	      && ret.str[i + 1][j + 1] == '.' && ret.str[i + 1][j + 2] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i][j + 1] = a;
-	      str2[i + 1][j + 1] = a;
-	      str2[i + 1][j + 2] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i][j + 1] = a;
+	      ret.str[i + 1][j + 1] = a;
+	      ret.str[i + 1][j + 2] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_ups(char **str2, int k, char a)
+t_ret	ft_ups(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -80,49 +82,48 @@ char	**ft_ups(char **str2, int k, char a)
       j = 1;
       while (j < k)
 	{
-	  if (str2[i][j] == '.' && str2[i + 1][j - 1] == '.' && str2[i + 1][j] == '.' &&
-	      str2[i + 2][j - 1] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j - 1] == '.' && ret.str[i + 1][j] == '.' &&
+	      ret.str[i + 2][j - 1] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i + 1][j - 1] = a;
-	      str2[i + 1][j] = a;
-	      str2[i + 2][j - 1] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j - 1] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 2][j - 1] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_upz(char **str2, int k, char a)
+t_ret	ft_upz(int k, char a, t_ret ret)
 {
   int i;
   int j;
   
   i = 0;
   j = 0;
-  ft_putstr("K=======> ");
-  ft_putnbr(k);
-  ft_putchar('\n');
   while (i < k - 2)
     {
       j = 0;
       while (j < k - 1)
 	{
-	  if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 1][j + 1] == '.' &&
-	      str2[i + 2][j + 1] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j] == '.' && ret.str[i + 1][j + 1] == '.' &&
+	      ret.str[i + 2][j + 1] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i + 1][j] = a;
-	      str2[i + 1][j + 1] = a;
-	      str2[i + 2][j + 1] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 1][j + 1] = a;
+	      ret.str[i + 2][j + 1] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }

@@ -34,40 +34,47 @@ const t_place gl_placetab[] = {
 	{"upz", &ft_upz}
 };
 
-char	**ft_call_func(char **tab, int i, int j, char a)
+t_ret	ft_call_func(t_ret ret, int i, int j, char a)
 {
-  tab = gl_placetab[i].func(tab, j, a);
-  return (tab);
+  ret = gl_placetab[i].func(j, a, ret);
+  return (ret);
 }
 int	ft_resolve(t_list *begin_list, int tetrinb)
 {
   t_list *list;
-  char **str;
+  t_ret ret;
   int i;
-  int x;
-  int y;
-  int listsize;
+  int count;
+  t_alg *structure;
+  int count2;
 
-  listsize = ft_list_size(&begin_list);
-  tetrinb = listsize;
-  y = 0;
-  x = 0;
+  ret.i = 0;
+  count2 = 0;
+  if (!(structure = (t_alg *)malloc(sizeof(t_alg) * tetrinb + 1)))
+    return (0);
+  count = tetrinb;
   i = 0;
   list = begin_list;
-  str = ft_tab_init(ft_sqrt(listsize * 4));
-  x = 0;
+  ret.str = ft_tab_init(ft_sqrt(tetrinb * 4));
   list = list->next;
   while (list)
     {
-      while (ft_strcmp(gl_placetab[i].s, list->str) != 0 && i < 19)
-	i++;
-      str = ft_call_func(str, i, ft_sqrt(listsize * 4), list->a);
-      i = 0;
+      structure[count2].str = list->str;
+      structure[count2].a = list->a;
       list = list->next;
+      count2++;
     }
-  //  str = ft_resize_tab(str, listsize * 3);
-  ft_putstr("CECI EST L'AFFICHAGE FINAL <--------<\n");
-  ft_putab(str);
-  return (ft_strlen(str[0]));
+  structure[count2].str = NULL;
+  count2 = 0;
+  while (structure[count2].str != NULL)
+    {
+      while (ft_strcmp(gl_placetab[i].s, structure[count2].str) != 0 && i < 19)
+	  i++;
+      ret = ft_call_func(ret, i, ft_sqrt(tetrinb * 4), structure[count2].a);
+      i = 0;
+      count2++;
+      count--;
+    }
+  ft_putab(ret.str);
+  return (0);
 }
-

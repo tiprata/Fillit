@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	**ft_sl(char **str2, int k, char a)
+t_ret	ft_sl(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -21,156 +21,147 @@ char	**ft_sl(char **str2, int k, char a)
   j = 0;
   if (k == 1)
     {
-      str2[i][j] = a;
-      str2[i + 1][j] = a;
-      str2[i + 1][j + 1] = a;
-      str2[i + 1][j + 2] = a;
-      return (str2);
+      ret.str[i][j] = a;
+      ret.str[i + 1][j] = a;
+      ret.str[i + 1][j + 1] = a;
+      ret.str[i + 1][j + 2] = a;
+      ret.i = 1;
+      return (ret);
     }
-  while (i < k - 1 && j < k - 1)
+  while (i < k - 1)
     {
-      if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 1][j + 1] == '.'
-	  && str2[i + 1][j + 2] == '.')
+      j = 0;
+      while (j < k - 2)
 	{
-	  str2[i][j] = a;
-	  str2[i + 1][j] = a;
-	  str2[i + 1][j + 1] = a;
-	  str2[i + 1][j + 2] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j] == '.' && ret.str[i + 1][j + 1] == '.'
+	      && ret.str[i + 1][j + 2] == '.')
+	    {
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 1][j + 1] = a;
+	      ret.str[i + 1][j + 2] = a;
+	      ret.i = 1;
+	      return (ret);
+	    }
 	  j++;
 	}
-      if (j == k - 2)
-	{
-	  i++;
-	  j = 0;
-	}
+      i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_rsl(char **str2, int k, char a)
+t_ret	ft_rsl(int k, char a, t_ret ret)
 {
   int i;
   int j;
   
   i = 0;
   j = 0;
-  while (i < k - 2 && j < k - 3)
+  while (i < k - 2)
     {
-      if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i][j + 2] == '.' &&
-	  str2[i + 1][j] == '.')
+      j = 0;
+      while (j < k - 3)
 	{
-	  str2[i][j] = a;
-	  str2[i][j + 1] = a;
-	  str2[i][j + 2] = a;
-	  str2[i + 1][j] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (ret.str[i][j] == '.' && ret.str[i][j + 1] == '.' && ret.str[i][j + 2] == '.' &&
+	      ret.str[i + 1][j] == '.')
+	    {
+	      ret.str[i][j] = a;
+	      ret.str[i][j + 1] = a;
+	      ret.str[i][j + 2] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.i = 1;
+	      return (ret);
+	    }
 	  j++;
 	}
-      if (j == k - 4)
-	{
-	  i++;
-	  j = 0;
-	}
+      i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_ill(char **str2, int k, char a)
+t_ret	ft_ill(int k, char a, t_ret ret)
 {
   int i;
   int j;
   
   i = 0;
   j = 1;
-  while (i < k - 3 && j < k - 2)
+  while (i < k - 3)
     {
-      if (str2[i][j] == '.' && str2[i + 1][j] == '.'
-	  && str2[i + 2][j] == '.' && str2[i + 2][j - 1] == '.')
+      j = 1;
+      while (j < k - 2)
 	{
-	  str2[i][j] = a;
-	  str2[i + 1][j] = a;
-	  str2[i + 2][j] = a;
-	  str2[i + 2][j - 1] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j] == '.'
+	      && ret.str[i + 2][j] == '.' && ret.str[i + 2][j - 1] == '.')
+	    {
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 2][j] = a;
+	      ret.str[i + 2][j - 1] = a;
+	      ret.i = 1;
+	      return (ret);
+	    }
 	  j++;
 	}
-      if (j == k - 3)
-	{
-	  i++;
-	  j = 1;
-	}
+      i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_isl(char **str2, int k, char a)
+t_ret	ft_isl(int k, char a, t_ret ret)
 {
   int i;
   int j;
   
   i = 0;
   j = 0;
-  while (i < k - 4 && j < k - 1)
+  while (i < k - 2)
     {
-      if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 2][j] == '.' &&
-	  str2[i + 2][j + 1] == '.')
+      j = 0;
+      while (j < k - 1)
 	{
-	  str2[i][j] = a;
-	  str2[i + 1][j] = a;
-	  str2[i + 2][j] = a;
-	  str2[i + 2][j + 1] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j] == '.' && ret.str[i + 2][j] == '.' &&
+	      ret.str[i + 2][j + 1] == '.')
+	    {
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 2][j] = a;
+	      ret.str[i + 2][j + 1] = a;
+	      ret.i = 1;
+	      return (ret);
+	    }
 	  j++;
 	}
-      if (j == k - 2)
-	{
-	  i++;
-	  j = 0;
-	}
+      i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_irsl(char **str2, int k, char a)
+t_ret	ft_irsl(int k, char a, t_ret ret)
 {
   int i;
   int j;
   
   i = 0;
   j = 0;
-  while (i < k - 2 && j < k - 3)
+  while (i < k - 2)
     {
-      if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i][j + 2] == '.' &&
-	  str2[i + 1][j + 2] == '.')
+      j = 0;
+      while (j < k - 3)
 	{
-	  str2[i][j] = a;
-	  str2[i][j + 1] = a;
-	  str2[i][j + 2] = a;
-	  str2[i + 1][j + 2] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (ret.str[i][j] == '.' && ret.str[i][j + 1] == '.' && ret.str[i][j + 2] == '.' &&
+	      ret.str[i + 1][j + 2] == '.')
+	    {
+	      ret.str[i][j] = a;
+	      ret.str[i][j + 1] = a;
+	      ret.str[i][j + 2] = a;
+	      ret.str[i + 1][j + 2] = a;
+	      ret.i = 1;
+	      return (ret);
+	    }
 	  j++;
 	}
-      if (j == k - 3)
-	{
-	  i++;
-	  j = 0;
-	}
+      i++;
     }
-  return (str2);
+  return (ret);
 }

@@ -13,7 +13,7 @@
 
 #include "libft.h"
 
-char	**ft_irll(char **str2, int k, char a)
+t_ret	ft_irll(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -25,23 +25,24 @@ char	**ft_irll(char **str2, int k, char a)
       j = 0;
       while (j < k - 1)
 	{
-	  if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j + 1] == '.'
-	      && str2[i + 2][j + 1] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i][j + 1] == '.' && ret.str[i + 1][j + 1] == '.'
+	      && ret.str[i + 2][j + 1] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i][j + 1] = a;
-	      str2[i + 1][j + 1] = a;
-	      str2[i + 2][j + 1] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i][j + 1] = a;
+	      ret.str[i + 1][j + 1] = a;
+	      ret.str[i + 2][j + 1] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_lt(char **str2, int k, char a)
+t_ret	ft_lt(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -53,23 +54,24 @@ char	**ft_lt(char **str2, int k, char a)
       j = 1;
       while (j < k)
 	{
-	  if (str2[i][j] == '.' && str2[i + 1][j - 1] == '.' && str2[i + 1][j] == '.'
-	      && str2[i + 2][j] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j - 1] == '.' && ret.str[i + 1][j] == '.'
+	      && ret.str[i + 2][j] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i + 1][j - 1] = a;
-	      str2[i + 1][j] = a;
-	      str2[i + 2][j] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j - 1] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 2][j] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;	  
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_rit(char **str2, int k, char a)
+t_ret	ft_rit(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -81,23 +83,24 @@ char	**ft_rit(char **str2, int k, char a)
       j = 0;
       while (j < k - 1)
 	{
-	  if (str2[i][j] == '.' && str2[i + 1][j + 1] == '.'
-	      && str2[i + 1][j] == '.' && str2[i + 2][j] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j + 1] == '.'
+	      && ret.str[i + 1][j] == '.' && ret.str[i + 2][j] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i + 1][j + 1] = a;
-	      str2[i + 1][j] = a;
-	      str2[i + 2][j] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j + 1] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 2][j] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_t(char **str2, int k, char a)
+t_ret	ft_t(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -109,23 +112,24 @@ char	**ft_t(char **str2, int k, char a)
       j = 0;
       while (j < k - 2)
 	{
-	  if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i][j + 2] == '.' &&
-	      str2[i + 1][j + 1] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i][j + 1] == '.' && ret.str[i][j + 2] == '.' &&
+	      ret.str[i + 1][j + 1] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i][j + 1] = a;
-	      str2[i][j + 2] = a;
-	      str2[i + 1][j + 1] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i][j + 1] = a;
+	      ret.str[i][j + 2] = a;
+	      ret.str[i + 1][j + 1] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  j++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }
 
-char	**ft_rt(char **str2, int k, char a)
+t_ret	ft_rt(int k, char a, t_ret ret)
 {
   int i;
   int j;
@@ -137,18 +141,19 @@ char	**ft_rt(char **str2, int k, char a)
       j = 1;
       while (j < k - 1)
 	{
-	  if (str2[i][j] == '.' && str2[i + 1][j - 1] == '.' && str2[i + 1][j] == '.'
-	      && str2[i + 1][j + 1] == '.')
+	  if (ret.str[i][j] == '.' && ret.str[i + 1][j - 1] == '.' && ret.str[i + 1][j] == '.'
+	      && ret.str[i + 1][j + 1] == '.')
 	    {
-	      str2[i][j] = a;
-	      str2[i + 1][j - 1] = a;
-	      str2[i + 1][j] = a;
-	      str2[i + 1][j + 1] = a;
-	      return (str2);
+	      ret.str[i][j] = a;
+	      ret.str[i + 1][j - 1] = a;
+	      ret.str[i + 1][j] = a;
+	      ret.str[i + 1][j + 1] = a;
+	      ret.i = 1;
+	      return (ret);
 	    }
 	  i++;
 	}
       i++;
     }
-  return (str2);
+  return (ret);
 }

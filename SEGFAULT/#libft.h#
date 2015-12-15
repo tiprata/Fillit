@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+00;95;c/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
@@ -61,7 +61,7 @@ int	ft_resolve(t_list *begin_list, int tetrinb);
 char **ft_transfotab(int x, char **str, int y);
 char **ft_resize_tab(char **str, int x);
 void	ft_putendl(char *s);
-t_ret	ft_call_func(t_ret ret, int i, int j, char a);
+t_ret	ft_call_func(char **tab, int i, int j, char a);
 t_ret	ft_su(int k, char a, t_ret ret);
 t_ret	ft_sd(int k, char a, t_ret ret);
 t_ret	ft_square(int k, char a, t_ret ret);
@@ -78,7 +78,7 @@ t_ret	ft_rit(int k, char a, t_ret ret);
 t_ret	ft_t(int k, char a, t_ret ret);
 t_ret	ft_rt(int k, char a, t_ret ret);
 t_ret	ft_s(int k, char a, t_ret ret);
-t_ret	ft_z(int k, char a, t_ret ret);
+t_ret	ft_z(int k, t_ret ret);
 t_ret	ft_ups(int k, char a, t_ret ret);
 t_ret	ft_upz(int k, char a, t_ret ret);
 int		ft_strcmp(const char *s1, const char *s2);

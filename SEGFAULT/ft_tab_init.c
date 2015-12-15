@@ -29,6 +29,5 @@ char **ft_tab_init(int i)
       j++;
     }
   str[j] = NULL;
-  ft_putab(str);
   return (str);
 }
