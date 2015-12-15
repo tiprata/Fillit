@@ -20,26 +20,23 @@ char	**ft_s(char **str2, int k, char a)
   
   i = 0;
   j = 1;
-  while (i < k - 2 && j < k - 3)
+  while (i < k - 1)
     {
-      if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j - 1] == '.'
-	  && str2[i + 1][j] == '.')
+      j = 1;
+      while (j < k - 1)
 	{
-	  str2[i][j] = a;
-	  str2[i][j + 1] = a;
-	  str2[i + 1][j - 1] = a;
-	  str2[i + 1][j] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (str2[i][j] == '.' && str2[i][j + 1] == '.' && str2[i + 1][j - 1] == '.'
+	      && str2[i + 1][j] == '.')
+	    {
+	      str2[i][j] = a;
+	      str2[i][j + 1] = a;
+	      str2[i + 1][j - 1] = a;
+	      str2[i + 1][j] = a;
+	      return (str2);
+	    }
 	  j++;
 	}
-      if (j == k - 4)
-	{
-	  i++;
-	  j = 1;
-	}
+      i++;
     }
   return (str2);
 }
@@ -51,26 +48,23 @@ char	**ft_z(char **str2, int k, char a)
   
   i = 0;
   j = 0;
-  while (i < k - 2 && j < k - 2)
+  while (i < k - 1)
     {
-      if (str2[i][j] == '.' && str2[i][j + 1] == '.'
-	  && str2[i + 1][j + 1] == '.' && str2[i + 1][j + 2] == '.')
+      j = 0;
+      while (j < k - 2)
 	{
-	  str2[i][j] = a;
-	  str2[i][j + 1] = a;
-	  str2[i + 1][j + 1] = a;
-	  str2[i + 1][j + 2] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (str2[i][j] == '.' && str2[i][j + 1] == '.'
+	      && str2[i + 1][j + 1] == '.' && str2[i + 1][j + 2] == '.')
+	    {
+	      str2[i][j] = a;
+	      str2[i][j + 1] = a;
+	      str2[i + 1][j + 1] = a;
+	      str2[i + 1][j + 2] = a;
+	      return (str2);
+	    }
 	  j++;
 	}
-      if (j == (k - 3))
-	{
-	  i++;
-	  j = 0;
-	}
+      i++;
     }
   return (str2);
 }
@@ -81,7 +75,7 @@ char	**ft_ups(char **str2, int k, char a)
   int j;
   
   i = 0;
-  while (i < k)
+  while (i < k - 2)
     {
       j = 1;
       while (j < k)
@@ -112,26 +106,23 @@ char	**ft_upz(char **str2, int k, char a)
   ft_putstr("K=======> ");
   ft_putnbr(k);
   ft_putchar('\n');
-  while (i < k - 3 && j < k - 1)
+  while (i < k - 2)
     {
-      if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 1][j + 1] == '.' &&
-	  str2[i + 2][j + 1] == '.' )
+      j = 0;
+      while (j < k - 1)
 	{
-	  str2[i][j] = a;
-	  str2[i + 1][j] = a;
-	  str2[i + 1][j + 1] = a;
-	  str2[i + 2][j + 1] = a;
-	  return (str2);
-	}
-      else
-	{
+	  if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 1][j + 1] == '.' &&
+	      str2[i + 2][j + 1] == '.')
+	    {
+	      str2[i][j] = a;
+	      str2[i + 1][j] = a;
+	      str2[i + 1][j + 1] = a;
+	      str2[i + 2][j + 1] = a;
+	      return (str2);
+	    }
 	  j++;
 	}
-      if (j == k - 2)
-	{
-	  i++;
-	  j = 0;
-	}
+      i++;
     }
   return (str2);
 }

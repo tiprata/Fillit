@@ -65,7 +65,6 @@ int	ft_resolve(t_list *begin_list, int tetrinb)
       i = 0;
       list = list->next;
     }
-  
   //  str = ft_resize_tab(str, listsize * 3);
   ft_putstr("CECI EST L'AFFICHAGE FINAL <--------<\n");
   ft_putab(str);

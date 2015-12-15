@@ -23,6 +23,7 @@ int     main(int ac, char **av)
 		write(1, "error\n", 6);
 		return (0);
 	}
+	//	ft_putstr("YOLOLOL");
 	file = ft_fillit_read_open(av);
 	if (file.errcheck == -1) 
 	  {

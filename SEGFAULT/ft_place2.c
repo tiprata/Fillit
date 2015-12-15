@@ -19,7 +19,7 @@ char	**ft_sl(char **str2, int k, char a)
   
   i = 0;
   j = 0;
-  if (k ==1)
+  if (k == 1)
     {
       str2[i][j] = a;
       str2[i + 1][j] = a;
@@ -27,7 +27,7 @@ char	**ft_sl(char **str2, int k, char a)
       str2[i + 1][j + 2] = a;
       return (str2);
     }
-  while (i < k - 2 && j < k - 3)
+  while (i < k - 1 && j < k - 1)
     {
       if (str2[i][j] == '.' && str2[i + 1][j] == '.' && str2[i + 1][j + 1] == '.'
 	  && str2[i + 1][j + 2] == '.')
@@ -42,7 +42,7 @@ char	**ft_sl(char **str2, int k, char a)
 	{
 	  j++;
 	}
-      if (j == k - 4)
+      if (j == k - 2)
 	{
 	  i++;
 	  j = 0;
